@@ -1,0 +1,1487 @@
+<div class="hopepunk-sheet">
+  <input type="hidden" name="attr_hp_initialized" value="0">
+  <input type="hidden" name="attr_strain_disadvantage" value="0">
+  <header class="sheet-header">
+    <div>
+      <h1>HOPE//PUNK</h1>
+      <label>Character Name <input type="text" name="attr_character_name"></label>
+    </div>
+    <div class="header-grid">
+      <label>Player Name <input type="text" name="attr_player_name"></label>
+      <label>Samurai Handle <input type="text" name="attr_samurai_handle"></label>
+      <label>LVL <input type="number" name="attr_level" value="1"></label>
+      <div class="move-fly-pair">
+        <label>Move <input type="number" name="attr_movement_speed" value="0"></label>
+        <label>Fly <input type="number" name="attr_fly" value="0"></label>
+      </div>
+      <label class="npc-override-label">NPC Override <input class="npc-override-check" type="checkbox" name="attr_npc_override" value="1"></label>
+      <div class="npc-override-fields">
+        <label>NPC HP Max <input type="number" name="attr_npc_hp_max" value="0"></label>
+        <label>NPC Damage Negation <input type="number" name="attr_npc_damage_negation" value="0"></label>
+      </div>
+      <label>HP <input type="number" name="attr_hp"> / <input type="number" name="attr_hp_max_total" value="0" readonly></label>
+      <label>SP <input type="number" name="attr_sp_current" value="0"> / <input type="number" name="attr_sp_given" value="0"></label>
+      <label>SP Spent from Gear <input type="number" name="attr_sp_spent" value="0" readonly></label>
+      <label>Strain <input type="number" name="attr_strain_current" value="0" readonly> / <input type="number" name="attr_strain_max" value="3" readonly></label>
+      <label class="wide">Strain Status <input class="advance-status" type="text" name="attr_strain_status" value="" readonly title="Shows when this skill has enough XP to improve"></label>
+      <label>Wounds <input type="number" name="attr_wounds" value="0"></label>
+      <label>Evasion <input type="number" name="attr_evasion" value="0" readonly></label>
+      <label>Damage Negation <input type="number" name="attr_damage_negation" value="0" readonly></label>
+      <label>Proficiencies <input type="number" name="attr_proficiency_used" value="0" readonly> / <input type="number" name="attr_proficiency_allowed" value="2" readonly></label>
+    </div>
+  </header>
+
+  <section class="box">
+    <h2>Background</h2>
+    <label>Background <input type="text" name="attr_background"></label>
+    <label>Background Ability <textarea name="attr_background_ability"></textarea></label>
+    <label>Feats & Feat Abilities <textarea name="attr_feats"></textarea></label>
+  </section>
+<section class="box">
+    <h2>Skills</h2>
+    <p class="hint">Proficiency is a checkbox. Skill Exp is spent only on that specific skill: every 10 Exp counts as 1 improvement point toward that skill. Advantage adds +1d4; Disadvantage subtracts -1d4. Skill checks use 1d20.</p>
+    <div class="skill-row skill-header">
+      <div>Skill</div><div>Exp.</div><div>Lvl</div><div>Gear</div><div>Prof.</div><div>Total</div><div>Roll</div><div>Adv.</div><div>Dis.</div><div>Mark</div><div>Advance</div>
+    </div>
+    <div class="skill-category">COMBAT // VIOLENCE</div><div class="skill-row">
+  <div class="skill-name">Small Arms</div>
+  <input type="number" name="attr_small_arms_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_small_arms_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_small_arms_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_small_arms_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_small_arms_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_small_arms_strain_penalty" value="0">
+  <input type="hidden" name="attr_small_arms_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_small_arms" value="&amp;{template:hopepunk} {{name=Small Arms}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_small_arms_advantage" value="&amp;{template:hopepunk} {{name=Small Arms — Advantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_small_arms_disadvantage" value="&amp;{template:hopepunk} {{name=Small Arms — Disadvantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_small_arms">+Fail</button>
+  <input class="advance-status" type="text" name="attr_small_arms_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Big Guns</div>
+  <input type="number" name="attr_big_guns_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_big_guns_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_big_guns_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_big_guns_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_big_guns_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_big_guns_strain_penalty" value="0">
+  <input type="hidden" name="attr_big_guns_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_big_guns" value="&amp;{template:hopepunk} {{name=Big Guns}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_big_guns_advantage" value="&amp;{template:hopepunk} {{name=Big Guns — Advantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_big_guns_disadvantage" value="&amp;{template:hopepunk} {{name=Big Guns — Disadvantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_big_guns">+Fail</button>
+  <input class="advance-status" type="text" name="attr_big_guns_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Blades</div>
+  <input type="number" name="attr_blades_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_blades_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_blades_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_blades_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_blades_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_blades_strain_penalty" value="0">
+  <input type="hidden" name="attr_blades_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_blades" value="&amp;{template:hopepunk} {{name=Blades}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_blades_advantage" value="&amp;{template:hopepunk} {{name=Blades — Advantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_blades_disadvantage" value="&amp;{template:hopepunk} {{name=Blades — Disadvantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_blades">+Fail</button>
+  <input class="advance-status" type="text" name="attr_blades_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Melee Combat</div>
+  <input type="number" name="attr_melee_combat_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_melee_combat_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_melee_combat_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_melee_combat_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_melee_combat_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_melee_combat_strain_penalty" value="0">
+  <input type="hidden" name="attr_melee_combat_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_melee_combat" value="&amp;{template:hopepunk} {{name=Melee Combat}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_melee_combat_advantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Advantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_melee_combat_disadvantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Disadvantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_melee_combat">+Fail</button>
+  <input class="advance-status" type="text" name="attr_melee_combat_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Drone Warfare</div>
+  <input type="number" name="attr_drone_warfare_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_drone_warfare_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_drone_warfare_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_drone_warfare_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_drone_warfare_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_drone_warfare_strain_penalty" value="0">
+  <input type="hidden" name="attr_drone_warfare_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_drone_warfare" value="&amp;{template:hopepunk} {{name=Drone Warfare}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_drone_warfare_advantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Advantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_drone_warfare_disadvantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Disadvantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_drone_warfare">+Fail</button>
+  <input class="advance-status" type="text" name="attr_drone_warfare_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Demolitions</div>
+  <input type="number" name="attr_demolitions_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_demolitions_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_demolitions_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_demolitions_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_demolitions_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_demolitions_strain_penalty" value="0">
+  <input type="hidden" name="attr_demolitions_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_demolitions" value="&amp;{template:hopepunk} {{name=Demolitions}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_demolitions_advantage" value="&amp;{template:hopepunk} {{name=Demolitions — Advantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_demolitions_disadvantage" value="&amp;{template:hopepunk} {{name=Demolitions — Disadvantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_demolitions">+Fail</button>
+  <input class="advance-status" type="text" name="attr_demolitions_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Evasion</div>
+  <input type="number" name="attr_evasion_skill_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_evasion_skill_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_evasion_skill_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_evasion_skill_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_evasion_skill_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_evasion_skill_strain_penalty" value="0">
+  <input type="hidden" name="attr_evasion_skill_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_evasion_skill" value="&amp;{template:hopepunk} {{name=Evasion}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_evasion_skill_advantage" value="&amp;{template:hopepunk} {{name=Evasion — Advantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_evasion_skill_disadvantage" value="&amp;{template:hopepunk} {{name=Evasion — Disadvantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_evasion_skill">+Fail</button>
+  <input class="advance-status" type="text" name="attr_evasion_skill_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Physique</div>
+  <input type="number" name="attr_physique_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_physique_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_physique_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_physique_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_physique_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_physique_strain_penalty" value="0">
+  <input type="hidden" name="attr_physique_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_physique" value="&amp;{template:hopepunk} {{name=Physique}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_physique_advantage" value="&amp;{template:hopepunk} {{name=Physique — Advantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_physique_disadvantage" value="&amp;{template:hopepunk} {{name=Physique — Disadvantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_physique">+Fail</button>
+  <input class="advance-status" type="text" name="attr_physique_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-category">CYBERNETICS // TECHNOLOGY</div><div class="skill-row">
+  <div class="skill-name">Hacking</div>
+  <input type="number" name="attr_hacking_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_hacking_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_hacking_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_hacking_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_hacking_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_hacking_strain_penalty" value="0">
+  <input type="hidden" name="attr_hacking_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_hacking" value="&amp;{template:hopepunk} {{name=Hacking}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_hacking_advantage" value="&amp;{template:hopepunk} {{name=Hacking — Advantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_hacking_disadvantage" value="&amp;{template:hopepunk} {{name=Hacking — Disadvantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_hacking">+Fail</button>
+  <input class="advance-status" type="text" name="attr_hacking_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Cybernetics Handling</div>
+  <input type="number" name="attr_cybernetics_handling_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_cybernetics_handling_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_cybernetics_handling_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_cybernetics_handling_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_cybernetics_handling_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_cybernetics_handling_strain_penalty" value="0">
+  <input type="hidden" name="attr_cybernetics_handling_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_cybernetics_handling" value="&amp;{template:hopepunk} {{name=Cybernetics Handling}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_cybernetics_handling_advantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Advantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_cybernetics_handling_disadvantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Disadvantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_cybernetics_handling">+Fail</button>
+  <input class="advance-status" type="text" name="attr_cybernetics_handling_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Sabotage</div>
+  <input type="number" name="attr_sabotage_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_sabotage_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_sabotage_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_sabotage_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_sabotage_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_sabotage_strain_penalty" value="0">
+  <input type="hidden" name="attr_sabotage_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_sabotage" value="&amp;{template:hopepunk} {{name=Sabotage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_sabotage_advantage" value="&amp;{template:hopepunk} {{name=Sabotage — Advantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_sabotage_disadvantage" value="&amp;{template:hopepunk} {{name=Sabotage — Disadvantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_sabotage">+Fail</button>
+  <input class="advance-status" type="text" name="attr_sabotage_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Jury-Rigging</div>
+  <input type="number" name="attr_jury_rigging_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_jury_rigging_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_jury_rigging_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_jury_rigging_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_jury_rigging_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_jury_rigging_strain_penalty" value="0">
+  <input type="hidden" name="attr_jury_rigging_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_jury_rigging" value="&amp;{template:hopepunk} {{name=Jury-Rigging}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_jury_rigging_advantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Advantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_jury_rigging_disadvantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Disadvantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_jury_rigging">+Fail</button>
+  <input class="advance-status" type="text" name="attr_jury_rigging_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Engineering</div>
+  <input type="number" name="attr_engineering_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_engineering_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_engineering_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_engineering_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_engineering_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_engineering_strain_penalty" value="0">
+  <input type="hidden" name="attr_engineering_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_engineering" value="&amp;{template:hopepunk} {{name=Engineering}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_engineering_advantage" value="&amp;{template:hopepunk} {{name=Engineering — Advantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_engineering_disadvantage" value="&amp;{template:hopepunk} {{name=Engineering — Disadvantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_engineering">+Fail</button>
+  <input class="advance-status" type="text" name="attr_engineering_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-category">SOCIAL // INFLUENCE</div><div class="skill-row">
+  <div class="skill-name">Fast Talk</div>
+  <input type="number" name="attr_fast_talk_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_fast_talk_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_fast_talk_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_fast_talk_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_fast_talk_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_fast_talk_strain_penalty" value="0">
+  <input type="hidden" name="attr_fast_talk_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_fast_talk" value="&amp;{template:hopepunk} {{name=Fast Talk}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_fast_talk_advantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Advantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_fast_talk_disadvantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Disadvantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_fast_talk">+Fail</button>
+  <input class="advance-status" type="text" name="attr_fast_talk_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Street Cred</div>
+  <input type="number" name="attr_street_cred_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_street_cred_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_street_cred_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_street_cred_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_street_cred_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_street_cred_strain_penalty" value="0">
+  <input type="hidden" name="attr_street_cred_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_street_cred" value="&amp;{template:hopepunk} {{name=Street Cred}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_street_cred_advantage" value="&amp;{template:hopepunk} {{name=Street Cred — Advantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_street_cred_disadvantage" value="&amp;{template:hopepunk} {{name=Street Cred — Disadvantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_street_cred">+Fail</button>
+  <input class="advance-status" type="text" name="attr_street_cred_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Underworld</div>
+  <input type="number" name="attr_underworld_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_underworld_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_underworld_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_underworld_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_underworld_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_underworld_strain_penalty" value="0">
+  <input type="hidden" name="attr_underworld_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_underworld" value="&amp;{template:hopepunk} {{name=Underworld}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_underworld_advantage" value="&amp;{template:hopepunk} {{name=Underworld — Advantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_underworld_disadvantage" value="&amp;{template:hopepunk} {{name=Underworld — Disadvantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_underworld">+Fail</button>
+  <input class="advance-status" type="text" name="attr_underworld_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Corporate</div>
+  <input type="number" name="attr_corporate_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_corporate_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_corporate_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_corporate_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_corporate_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_corporate_strain_penalty" value="0">
+  <input type="hidden" name="attr_corporate_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_corporate" value="&amp;{template:hopepunk} {{name=Corporate}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_corporate_advantage" value="&amp;{template:hopepunk} {{name=Corporate — Advantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_corporate_disadvantage" value="&amp;{template:hopepunk} {{name=Corporate — Disadvantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_corporate">+Fail</button>
+  <input class="advance-status" type="text" name="attr_corporate_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Media</div>
+  <input type="number" name="attr_media_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_media_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_media_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_media_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_media_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_media_strain_penalty" value="0">
+  <input type="hidden" name="attr_media_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_media" value="&amp;{template:hopepunk} {{name=Media}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_media_advantage" value="&amp;{template:hopepunk} {{name=Media — Advantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_media_disadvantage" value="&amp;{template:hopepunk} {{name=Media — Disadvantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_media">+Fail</button>
+  <input class="advance-status" type="text" name="attr_media_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Persuasion</div>
+  <input type="number" name="attr_persuasion_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_persuasion_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_persuasion_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_persuasion_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_persuasion_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_persuasion_strain_penalty" value="0">
+  <input type="hidden" name="attr_persuasion_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_persuasion" value="&amp;{template:hopepunk} {{name=Persuasion}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_persuasion_advantage" value="&amp;{template:hopepunk} {{name=Persuasion — Advantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_persuasion_disadvantage" value="&amp;{template:hopepunk} {{name=Persuasion — Disadvantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_persuasion">+Fail</button>
+  <input class="advance-status" type="text" name="attr_persuasion_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Bullying</div>
+  <input type="number" name="attr_bullying_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_bullying_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_bullying_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_bullying_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_bullying_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_bullying_strain_penalty" value="0">
+  <input type="hidden" name="attr_bullying_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_bullying" value="&amp;{template:hopepunk} {{name=Bullying}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_bullying_advantage" value="&amp;{template:hopepunk} {{name=Bullying — Advantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_bullying_disadvantage" value="&amp;{template:hopepunk} {{name=Bullying — Disadvantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_bullying">+Fail</button>
+  <input class="advance-status" type="text" name="attr_bullying_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Infiltration</div>
+  <input type="number" name="attr_infiltration_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_infiltration_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_infiltration_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_infiltration_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_infiltration_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_infiltration_strain_penalty" value="0">
+  <input type="hidden" name="attr_infiltration_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_infiltration" value="&amp;{template:hopepunk} {{name=Infiltration}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_infiltration_advantage" value="&amp;{template:hopepunk} {{name=Infiltration — Advantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_infiltration_disadvantage" value="&amp;{template:hopepunk} {{name=Infiltration — Disadvantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_infiltration">+Fail</button>
+  <input class="advance-status" type="text" name="attr_infiltration_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Performance</div>
+  <input type="number" name="attr_performance_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_performance_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_performance_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_performance_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_performance_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_performance_strain_penalty" value="0">
+  <input type="hidden" name="attr_performance_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_performance" value="&amp;{template:hopepunk} {{name=Performance}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_performance_advantage" value="&amp;{template:hopepunk} {{name=Performance — Advantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_performance_disadvantage" value="&amp;{template:hopepunk} {{name=Performance — Disadvantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_performance">+Fail</button>
+  <input class="advance-status" type="text" name="attr_performance_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Investigation</div>
+  <input type="number" name="attr_investigation_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_investigation_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_investigation_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_investigation_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_investigation_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_investigation_strain_penalty" value="0">
+  <input type="hidden" name="attr_investigation_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_investigation" value="&amp;{template:hopepunk} {{name=Investigation}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_investigation_advantage" value="&amp;{template:hopepunk} {{name=Investigation — Advantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_investigation_disadvantage" value="&amp;{template:hopepunk} {{name=Investigation — Disadvantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_investigation">+Fail</button>
+  <input class="advance-status" type="text" name="attr_investigation_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-category">SURVIVAL // UTILITY</div><div class="skill-row">
+  <div class="skill-name">Awareness</div>
+  <input type="number" name="attr_awareness_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_awareness_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_awareness_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_awareness_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_awareness_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_awareness_strain_penalty" value="0">
+  <input type="hidden" name="attr_awareness_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_awareness" value="&amp;{template:hopepunk} {{name=Awareness}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_awareness_advantage" value="&amp;{template:hopepunk} {{name=Awareness — Advantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_awareness_disadvantage" value="&amp;{template:hopepunk} {{name=Awareness — Disadvantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_awareness">+Fail</button>
+  <input class="advance-status" type="text" name="attr_awareness_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Scavenging</div>
+  <input type="number" name="attr_scavenging_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_scavenging_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_scavenging_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_scavenging_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_scavenging_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_scavenging_strain_penalty" value="0">
+  <input type="hidden" name="attr_scavenging_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_scavenging" value="&amp;{template:hopepunk} {{name=Scavenging}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_scavenging_advantage" value="&amp;{template:hopepunk} {{name=Scavenging — Advantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_scavenging_disadvantage" value="&amp;{template:hopepunk} {{name=Scavenging — Disadvantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_scavenging">+Fail</button>
+  <input class="advance-status" type="text" name="attr_scavenging_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">First Aid</div>
+  <input type="number" name="attr_first_aid_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_first_aid_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_first_aid_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_first_aid_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_first_aid_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_first_aid_strain_penalty" value="0">
+  <input type="hidden" name="attr_first_aid_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_first_aid" value="&amp;{template:hopepunk} {{name=First Aid}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_first_aid_advantage" value="&amp;{template:hopepunk} {{name=First Aid — Advantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_first_aid_disadvantage" value="&amp;{template:hopepunk} {{name=First Aid — Disadvantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_first_aid">+Fail</button>
+  <input class="advance-status" type="text" name="attr_first_aid_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Stealth</div>
+  <input type="number" name="attr_stealth_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_stealth_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_stealth_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_stealth_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_stealth_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_stealth_strain_penalty" value="0">
+  <input type="hidden" name="attr_stealth_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_stealth" value="&amp;{template:hopepunk} {{name=Stealth}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_stealth_advantage" value="&amp;{template:hopepunk} {{name=Stealth — Advantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_stealth_disadvantage" value="&amp;{template:hopepunk} {{name=Stealth — Disadvantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_stealth">+Fail</button>
+  <input class="advance-status" type="text" name="attr_stealth_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Parkour</div>
+  <input type="number" name="attr_parkour_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_parkour_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_parkour_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_parkour_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_parkour_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_parkour_strain_penalty" value="0">
+  <input type="hidden" name="attr_parkour_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_parkour" value="&amp;{template:hopepunk} {{name=Parkour}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_parkour_advantage" value="&amp;{template:hopepunk} {{name=Parkour — Advantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_parkour_disadvantage" value="&amp;{template:hopepunk} {{name=Parkour — Disadvantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_parkour">+Fail</button>
+  <input class="advance-status" type="text" name="attr_parkour_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Piloting</div>
+  <input type="number" name="attr_piloting_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_piloting_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_piloting_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_piloting_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_piloting_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_piloting_strain_penalty" value="0">
+  <input type="hidden" name="attr_piloting_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_piloting" value="&amp;{template:hopepunk} {{name=Piloting}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_piloting_advantage" value="&amp;{template:hopepunk} {{name=Piloting — Advantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_piloting_disadvantage" value="&amp;{template:hopepunk} {{name=Piloting — Disadvantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_piloting">+Fail</button>
+  <input class="advance-status" type="text" name="attr_piloting_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Survival</div>
+  <input type="number" name="attr_survival_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_survival_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_survival_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_survival_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_survival_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_survival_strain_penalty" value="0">
+  <input type="hidden" name="attr_survival_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_survival" value="&amp;{template:hopepunk} {{name=Survival}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_survival_advantage" value="&amp;{template:hopepunk} {{name=Survival — Advantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_survival_disadvantage" value="&amp;{template:hopepunk} {{name=Survival — Disadvantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_survival">+Fail</button>
+  <input class="advance-status" type="text" name="attr_survival_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div><div class="skill-row">
+  <div class="skill-name">Xenobiology</div>
+  <input type="number" name="attr_xenobiology_exp" value="0" title="Failure XP / experience">
+  <input type="number" name="attr_xenobiology_lvl" value="0" title="Skill level">
+  <input type="number" name="attr_xenobiology_gear" value="0" readonly title="Automatic gear bonus">
+  <input class="prof-check" type="checkbox" name="attr_xenobiology_prof" value="1" title="Proficiency: adds +1d6 to skill checks">
+  <input type="number" name="attr_xenobiology_total" value="0" readonly title="Total flat modifier: level + gear">
+  <input type="hidden" name="attr_xenobiology_strain_penalty" value="0">
+  <input type="hidden" name="attr_xenobiology_strain_note" value="">
+  <button class="skill-roll" type="roll" name="roll_xenobiology" value="&amp;{template:hopepunk} {{name=Xenobiology}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_xenobiology_advantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Advantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}} {{Advantage=+1d4}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_xenobiology_disadvantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Disadvantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button type="action" name="act_mark_xenobiology">+Fail</button>
+  <input class="advance-status" type="text" name="attr_xenobiology_status" value="" readonly title="Shows when this skill has enough XP to improve">
+</div>
+  </section>
+
+  <section class="box">
+    <h2>Active Gear Bonuses</h2>
+    <p class="hint">Use these rows for any weapon, armour, cyberware, feat, consumable, or mod that grants a numerical flat bonus. Enable the row, choose a target, and enter the amount. For players, armour Defence fields are summed into Damage Negation.</p>
+    <div class="bonus-row bonus-header"><div>On</div><div>Source</div><div>Target</div><div>Amount</div></div>
+    <div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_1_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_1_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_1_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_1_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_2_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_2_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_2_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_2_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_3_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_3_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_3_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_3_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_4_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_4_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_4_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_4_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_5_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_5_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_5_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_5_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_6_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_6_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_6_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_6_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_7_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_7_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_7_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_7_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_8_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_8_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_8_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_8_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_9_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_9_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_9_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_9_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_10_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_10_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_10_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_10_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_11_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_11_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_11_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_11_amount" value="0">
+</div>
+<div class="bonus-row">
+  <input type="checkbox" name="attr_bonus_12_enabled" value="1" checked>
+  <input type="text" name="attr_bonus_12_source" placeholder="Source gear / mod">
+  <select name="attr_bonus_12_target">
+    <option value="none">— No bonus —</option>
+<option value="small_arms">Small Arms</option>
+<option value="big_guns">Big Guns</option>
+<option value="blades">Blades</option>
+<option value="melee_combat">Melee Combat</option>
+<option value="drone_warfare">Drone Warfare</option>
+<option value="demolitions">Demolitions</option>
+<option value="evasion_skill">Evasion</option>
+<option value="physique">Physique</option>
+<option value="hacking">Hacking</option>
+<option value="cybernetics_handling">Cybernetics Handling</option>
+<option value="sabotage">Sabotage</option>
+<option value="jury_rigging">Jury-Rigging</option>
+<option value="engineering">Engineering</option>
+<option value="fast_talk">Fast Talk</option>
+<option value="street_cred">Street Cred</option>
+<option value="underworld">Underworld</option>
+<option value="corporate">Corporate</option>
+<option value="media">Media</option>
+<option value="persuasion">Persuasion</option>
+<option value="bullying">Bullying</option>
+<option value="infiltration">Infiltration</option>
+<option value="performance">Performance</option>
+<option value="investigation">Investigation</option>
+<option value="awareness">Awareness</option>
+<option value="scavenging">Scavenging</option>
+<option value="first_aid">First Aid</option>
+<option value="stealth">Stealth</option>
+<option value="parkour">Parkour</option>
+<option value="piloting">Piloting</option>
+<option value="survival">Survival</option>
+<option value="xenobiology">Xenobiology</option>
+<option value="evasion">Evasion score</option>
+<option value="damage_negation">Damage Negation</option>
+<option value="armour_defence">Armour Defence</option>
+<option value="hp_max">HP Max</option>
+<option value="sp_max">SP Max</option>
+  </select>
+  <input type="number" name="attr_bonus_12_amount" value="0">
+</div>
+  </section>
+
+  <section class="box">
+    <h2>Consumables</h2>
+    <textarea name="attr_consumables"></textarea>
+  </section>
+
+  <section class="box gear-section">
+    <h2>Drones / Vehicles</h2>
+    <div class="gear-grid two"><div class="gear-card drone-card">
+<h4>Drone / Vehicle 1</h4>
+<label>Name <input type="text" name="attr_drone_1_name"></label>
+<label>SP Cost <input type="number" name="attr_drone_1_pts" value="0"></label>
+<label>Traits <textarea name="attr_drone_1_traits"></textarea></label>
+<label>Armament <textarea name="attr_drone_1_armament"></textarea></label>
+<label>Durability <input type="number" name="attr_drone_1_durability" value="0"></label>
+<label>Defence <input type="number" name="attr_drone_1_defence" value="0"></label>
+<label>Speed <input type="text" name="attr_drone_1_speed"></label>
+<label>Range <input type="text" name="attr_drone_1_range"></label>
+<label>Damage <input type="text" name="attr_drone_1_damage"></label>
+<label>Pilot DC <input type="number" name="attr_drone_1_pilot_dc" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_drone_1_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_drone_1_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_drone_1_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card drone-card">
+<h4>Drone / Vehicle 2</h4>
+<label>Name <input type="text" name="attr_drone_2_name"></label>
+<label>SP Cost <input type="number" name="attr_drone_2_pts" value="0"></label>
+<label>Traits <textarea name="attr_drone_2_traits"></textarea></label>
+<label>Armament <textarea name="attr_drone_2_armament"></textarea></label>
+<label>Durability <input type="number" name="attr_drone_2_durability" value="0"></label>
+<label>Defence <input type="number" name="attr_drone_2_defence" value="0"></label>
+<label>Speed <input type="text" name="attr_drone_2_speed"></label>
+<label>Range <input type="text" name="attr_drone_2_range"></label>
+<label>Damage <input type="text" name="attr_drone_2_damage"></label>
+<label>Pilot DC <input type="number" name="attr_drone_2_pilot_dc" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_drone_2_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_drone_2_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_drone_2_mod_c" value="0"></label>
+  </div>
+</div></div>
+  </section>
+
+  <section class="box gear-section">
+    <h2>Weapons</h2>
+    <div class="gear-grid two"><div class="gear-card weapon-card">
+  <h4>Weapon 1</h4>
+  <input type="hidden" name="attr_weapon_1_attack_total" value="0">
+  <input type="hidden" name="attr_weapon_1_attack_prof" value="0">
+  <input type="hidden" name="attr_weapon_1_attack_penalty" value="0">
+  <input type="hidden" name="attr_weapon_1_attack_strain_note" value="">
+  <input type="hidden" name="attr_weapon_1_skill_name" value="Small Arms">
+  <label>Name <input type="text" name="attr_weapon_1_name"></label>
+  <label>Skill
+    <select name="attr_weapon_1_skill">
+      <option value="small_arms">Small Arms</option>
+      <option value="big_guns">Big Guns</option>
+      <option value="blades">Blades</option>
+      <option value="melee_combat">Melee Combat</option>
+    </select>
+  </label>
+  <label>SP Cost <input type="number" name="attr_weapon_1_pts" value="0"></label>
+  <label>Range <input type="text" name="attr_weapon_1_range"></label>
+  <label>Damage <input type="text" name="attr_weapon_1_damage" value="1d4" placeholder="1d4+1"></label>
+  <label>Effects <textarea name="attr_weapon_1_effects" placeholder="Example: Save 12 or be stunned 1 round"></textarea></label>
+  <div class="weapon-buttons">
+    <button type="roll" class="weapon-attack" name="roll_weapon_1_attack" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}}"></button>
+    <button type="roll" class="weapon-advantage" name="roll_weapon_1_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Advantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Advantage=+1d4}}"></button>
+    <button type="roll" class="weapon-disadvantage" name="roll_weapon_1_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Disadvantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  </div>
+  <label>Description <textarea name="attr_weapon_1_description"></textarea></label>
+  <label>Traits <textarea name="attr_weapon_1_traits"></textarea></label>
+  <div class="slots">
+    <label>S <input type="number" name="attr_weapon_1_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_weapon_1_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_weapon_1_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card weapon-card">
+  <h4>Weapon 2</h4>
+  <input type="hidden" name="attr_weapon_2_attack_total" value="0">
+  <input type="hidden" name="attr_weapon_2_attack_prof" value="0">
+  <input type="hidden" name="attr_weapon_2_attack_penalty" value="0">
+  <input type="hidden" name="attr_weapon_2_attack_strain_note" value="">
+  <input type="hidden" name="attr_weapon_2_skill_name" value="Small Arms">
+  <label>Name <input type="text" name="attr_weapon_2_name"></label>
+  <label>Skill
+    <select name="attr_weapon_2_skill">
+      <option value="small_arms">Small Arms</option>
+      <option value="big_guns">Big Guns</option>
+      <option value="blades">Blades</option>
+      <option value="melee_combat">Melee Combat</option>
+    </select>
+  </label>
+  <label>SP Cost <input type="number" name="attr_weapon_2_pts" value="0"></label>
+  <label>Range <input type="text" name="attr_weapon_2_range"></label>
+  <label>Damage <input type="text" name="attr_weapon_2_damage" value="1d4" placeholder="1d4+1"></label>
+  <label>Effects <textarea name="attr_weapon_2_effects" placeholder="Example: Save 12 or be stunned 1 round"></textarea></label>
+  <div class="weapon-buttons">
+    <button type="roll" class="weapon-attack" name="roll_weapon_2_attack" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}}"></button>
+    <button type="roll" class="weapon-advantage" name="roll_weapon_2_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Advantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Advantage=+1d4}}"></button>
+    <button type="roll" class="weapon-disadvantage" name="roll_weapon_2_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Disadvantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  </div>
+  <label>Description <textarea name="attr_weapon_2_description"></textarea></label>
+  <label>Traits <textarea name="attr_weapon_2_traits"></textarea></label>
+  <div class="slots">
+    <label>S <input type="number" name="attr_weapon_2_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_weapon_2_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_weapon_2_mod_c" value="0"></label>
+  </div>
+</div></div>
+  </section>
+
+  <section class="box gear-section">
+    <h2>Armour</h2>
+    <div class="gear-grid three"><div class="gear-card armour-card">
+<h4>Armour 1</h4>
+<label>Name <input type="text" name="attr_armour_1_name"></label>
+<label>SP Cost <input type="number" name="attr_armour_1_pts" value="0"></label>
+<label>Traits <textarea name="attr_armour_1_traits"></textarea></label>
+<label>Weight <input type="number" name="attr_armour_1_weight" value="0"></label>
+<label>Defence <input type="number" name="attr_armour_1_defence" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_armour_1_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_armour_1_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_armour_1_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card armour-card">
+<h4>Armour 2</h4>
+<label>Name <input type="text" name="attr_armour_2_name"></label>
+<label>SP Cost <input type="number" name="attr_armour_2_pts" value="0"></label>
+<label>Traits <textarea name="attr_armour_2_traits"></textarea></label>
+<label>Weight <input type="number" name="attr_armour_2_weight" value="0"></label>
+<label>Defence <input type="number" name="attr_armour_2_defence" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_armour_2_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_armour_2_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_armour_2_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card armour-card">
+<h4>Armour 3</h4>
+<label>Name <input type="text" name="attr_armour_3_name"></label>
+<label>SP Cost <input type="number" name="attr_armour_3_pts" value="0"></label>
+<label>Traits <textarea name="attr_armour_3_traits"></textarea></label>
+<label>Weight <input type="number" name="attr_armour_3_weight" value="0"></label>
+<label>Defence <input type="number" name="attr_armour_3_defence" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_armour_3_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_armour_3_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_armour_3_mod_c" value="0"></label>
+  </div>
+</div></div>
+  </section>
+
+  <section class="box gear-section">
+    <h2>Cyberware</h2>
+    <div class="gear-grid three"><div class="gear-card cyberware-card">
+<h4>Cyberware 1</h4>
+<label>Name <input type="text" name="attr_cyberware_1_name"></label>
+<label>SP Cost <input type="number" name="attr_cyberware_1_pts" value="0"></label>
+<label>Traits <textarea name="attr_cyberware_1_traits"></textarea></label>
+<label>Part <input type="text" name="attr_cyberware_1_part"></label>
+<label>Strain <input type="number" name="attr_cyberware_1_strain" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_cyberware_1_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_cyberware_1_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_cyberware_1_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card cyberware-card">
+<h4>Cyberware 2</h4>
+<label>Name <input type="text" name="attr_cyberware_2_name"></label>
+<label>SP Cost <input type="number" name="attr_cyberware_2_pts" value="0"></label>
+<label>Traits <textarea name="attr_cyberware_2_traits"></textarea></label>
+<label>Part <input type="text" name="attr_cyberware_2_part"></label>
+<label>Strain <input type="number" name="attr_cyberware_2_strain" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_cyberware_2_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_cyberware_2_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_cyberware_2_mod_c" value="0"></label>
+  </div>
+</div>
+<div class="gear-card cyberware-card">
+<h4>Cyberware 3</h4>
+<label>Name <input type="text" name="attr_cyberware_3_name"></label>
+<label>SP Cost <input type="number" name="attr_cyberware_3_pts" value="0"></label>
+<label>Traits <textarea name="attr_cyberware_3_traits"></textarea></label>
+<label>Part <input type="text" name="attr_cyberware_3_part"></label>
+<label>Strain <input type="number" name="attr_cyberware_3_strain" value="0"></label>
+<div class="slots">
+    <label>S <input type="number" name="attr_cyberware_3_mod_s" value="0"></label>
+    <label>A <input type="number" name="attr_cyberware_3_mod_a" value="0"></label>
+    <label>C <input type="number" name="attr_cyberware_3_mod_c" value="0"></label>
+  </div>
+</div></div>
+  </section>
+
+  <section class="box">
+    <h2>Other</h2>
+    <textarea name="attr_other"></textarea>
+  </section>
+</div>
+
+<script type="text/worker">
+const skills = ["small_arms","big_guns","blades","melee_combat","drone_warfare","demolitions","evasion_skill","physique","hacking","cybernetics_handling","sabotage","jury_rigging","engineering","fast_talk","street_cred","underworld","corporate","media","persuasion","bullying","infiltration","performance","investigation","awareness","scavenging","first_aid","stealth","parkour","piloting","survival","xenobiology"];
+
+function n(value) {
+  return parseInt(value, 10) || 0;
+}
+
+function improvementCost(nextLevel) {
+  if (nextLevel <= 1) return 1;
+  if (nextLevel === 2) return 1;
+  if (nextLevel === 3) return 2;
+  if (nextLevel === 4) return 3;
+  if (nextLevel === 5) return 5;
+  if (nextLevel === 6) return 8;
+  if (nextLevel === 7) return 10;
+  if (nextLevel === 8) return 16;
+  return 20;
+}
+
+function skillAdvanceStatus(exp, lvl) {
+  const cost = improvementCost(lvl + 1);
+  const xpPoints = Math.floor(exp / 10);
+  const remaining = Math.max(0, (cost * 10) - exp);
+  return xpPoints >= cost
+    ? `Ready: ${xpPoints}/${cost} pts`
+    : `${remaining} XP to next`;
+}
+
+function recalcAdvanceStatuses() {
+  const attrs = [];
+  skills.forEach(skill => {
+    attrs.push(`${skill}_exp`, `${skill}_lvl`);
+  });
+  getAttrs(attrs, v => {
+    const out = {};
+    skills.forEach(skill => {
+      const exp = n(v[`${skill}_exp`]);
+      const lvl = n(v[`${skill}_lvl`]);
+      out[`${skill}_status`] = skillAdvanceStatus(exp, lvl);
+    });
+    setAttrs(out, {silent: true});
+  });
+}
+
+function zeroGearBonuses() {
+  const out = {};
+  skills.forEach(skill => out[`${skill}_gear`] = 0);
+  out.evasion_gear = 0;
+  out.damage_negation_gear = 0;
+  out.hp_max_gear = 0;
+  out.sp_max_gear = 0;
+  return out;
+}
+
+function recalcBonusesAndTotals() {
+  const attrs = ["level", "hp", "hp_initialized", "npc_override", "npc_hp_max", "npc_damage_negation"];
+  skills.forEach(skill => attrs.push(`${skill}_lvl`, `${skill}_prof`, `${skill}_exp`));
+  for (let i = 1; i <= 12; i++) {
+    attrs.push(`bonus_${i}_enabled`, `bonus_${i}_target`, `bonus_${i}_amount`);
+  }
+  for (let i = 1; i <= 2; i++) {
+    attrs.push(`weapon_${i}_pts`, `drone_${i}_pts`);
+  }
+  for (let i = 1; i <= 3; i++) {
+    attrs.push(`armour_${i}_pts`, `armour_${i}_defence`, `cyberware_${i}_pts`, `cyberware_${i}_strain`);
+  }
+
+  getAttrs(attrs, function(v) {
+    const gear = zeroGearBonuses();
+
+    for (let i = 1; i <= 12; i++) {
+      const enabled = v[`bonus_${i}_enabled`] === "1";
+      const target = v[`bonus_${i}_target`] || "none";
+      const amount = n(v[`bonus_${i}_amount`]);
+      if (enabled && target !== "none" && Object.prototype.hasOwnProperty.call(gear, `${target}_gear`)) {
+        gear[`${target}_gear`] += amount;
+      }
+    }
+
+    let baseArmourDefence = 0;
+    let currentStrain = 0;
+    let spentSp = 0;
+
+    for (let i = 1; i <= 2; i++) {
+      spentSp += n(v[`weapon_${i}_pts`]);
+      spentSp += n(v[`drone_${i}_pts`]);
+    }
+
+    for (let i = 1; i <= 3; i++) {
+      spentSp += n(v[`armour_${i}_pts`]);
+      spentSp += n(v[`cyberware_${i}_pts`]);
+      baseArmourDefence += n(v[`armour_${i}_defence`]);
+      currentStrain += n(v[`cyberware_${i}_strain`]);
+    }
+
+    const out = {};
+    let proficiencyUsed = 0;
+
+    skills.forEach(skill => {
+      const prof = n(v[`${skill}_prof`]);
+      proficiencyUsed += prof ? 1 : 0;
+
+      const total = n(v[`${skill}_lvl`]) + n(gear[`${skill}_gear`]);
+      out[`${skill}_gear`] = n(gear[`${skill}_gear`]);
+      out[`${skill}_total`] = total;
+      out[`${skill}_status`] = n(v[`${skill}_exp`]) >= 5 ? "Ready to improve" : "";
+    });
+
+    const level = Math.max(1, n(v.level));
+    const proficiencyAllowed = 2 + Math.floor(level / 10);
+
+    const strainMax = 3 + n(out.cybernetics_handling_total);
+    const strainOver = Math.max(0, currentStrain - strainMax);
+    const evasionPhysiquePenalty = strainOver >= 3 ? -3 : (strainOver >= 1 ? -strainOver : 0);
+    const combatPenalty = strainOver === 2 ? -1 : 0;
+    const hpMaxPenalty = strainOver >= 3 ? 2 : 0;
+    const strainDisadvantage = strainOver >= 3 ? 1 : 0;
+
+    out.strain_current = currentStrain;
+    out.strain_max = strainMax;
+    out.strain_disadvantage = strainDisadvantage;
+    out.strain_status = strainOver <= 0
+      ? "Within limit"
+      : `Over by ${strainOver}`;
+
+    skills.forEach(skill => {
+      out[`${skill}_strain_penalty`] = 0;
+      out[`${skill}_strain_note`] = strainDisadvantage ? "-1d4 from excessive strain" : "";
+    });
+
+    function setSkillStrain(skill, penalty) {
+      out[`${skill}_strain_penalty`] = penalty;
+      if (penalty !== 0 && strainDisadvantage) {
+        out[`${skill}_strain_note`] = `${penalty} and -1d4 from excessive strain`;
+      } else if (penalty !== 0) {
+        out[`${skill}_strain_note`] = `${penalty}`;
+      } else if (strainDisadvantage) {
+        out[`${skill}_strain_note`] = "-1d4 from excessive strain";
+      } else {
+        out[`${skill}_strain_note`] = "";
+      }
+    }
+
+    setSkillStrain("evasion_skill", evasionPhysiquePenalty);
+    setSkillStrain("physique", evasionPhysiquePenalty);
+    setSkillStrain("small_arms", combatPenalty);
+    setSkillStrain("big_guns", combatPenalty);
+    setSkillStrain("blades", combatPenalty);
+    setSkillStrain("melee_combat", combatPenalty);
+
+    out.proficiency_used = proficiencyUsed;
+    out.proficiency_allowed = proficiencyAllowed;
+
+    out.evasion = 10 + n(out.evasion_skill_total) + n(gear.evasion_gear) + evasionPhysiquePenalty;
+
+    if (v.npc_override === "1") {
+      out.damage_negation = n(v.npc_damage_negation);
+    } else {
+      out.damage_negation = baseArmourDefence + n(gear.damage_negation_gear);
+    }
+    if (v.npc_override === "1") {
+      out.hp_max_total = Math.max(0, n(v.npc_hp_max) - hpMaxPenalty);
+    } else {
+      out.hp_max_total = Math.max(0, 10 + n(out.physique_total) + n(gear.hp_max_gear) - hpMaxPenalty);
+    }
+
+    if (v.hp_initialized !== "1") {
+      out.hp = out.hp_max_total;
+      out.hp_initialized = "1";
+    }
+    out.sp_spent = spentSp;
+
+    setAttrs(out, recalcWeaponAttacks);
+  });
+}
+
+skills.forEach(skill => {
+  on(`clicked:mark_${skill}`, function() {
+    getAttrs([`${skill}_exp`, `${skill}_lvl`], function(v) {
+      const exp = n(v[`${skill}_exp`]) + 1;
+      const lvl = n(v[`${skill}_lvl`]);
+      const out = {};
+      out[`${skill}_exp`] = exp;
+      out[`${skill}_status`] = skillAdvanceStatus(exp, lvl);
+      setAttrs(out, recalcBonusesAndTotals);
+    });
+  });
+});
+
+let changeEvents = ["sheet:opened", "change:level", "change:npc_override", "change:npc_hp_max", "change:npc_damage_negation"];
+skills.forEach(skill => changeEvents.push(`change:${skill}_lvl`, `change:${skill}_prof`, `change:${skill}_exp`));
+for (let i = 1; i <= 12; i++) {
+  changeEvents.push(`change:bonus_${i}_enabled`, `change:bonus_${i}_target`, `change:bonus_${i}_amount`);
+}
+for (let i = 1; i <= 2; i++) {
+  changeEvents.push(`change:weapon_${i}_pts`, `change:drone_${i}_pts`);
+}
+for (let i = 1; i <= 3; i++) {
+  changeEvents.push(`change:armour_${i}_pts`, `change:armour_${i}_defence`, `change:cyberware_${i}_pts`, `change:cyberware_${i}_strain`);
+}
+
+
+const weaponSkillNames = {
+  small_arms: "Small Arms",
+  big_guns: "Big Guns",
+  blades: "Blades",
+  melee_combat: "Melee Combat"
+};
+
+function recalcWeaponAttacks() {
+  const attrs = [];
+  for (let i = 1; i <= 2; i++) {
+    attrs.push(`weapon_${i}_skill`, "strain_disadvantage");
+  }
+  Object.keys(weaponSkillNames).forEach(skill => {
+    attrs.push(`${skill}_total`, `${skill}_prof`, `${skill}_strain_penalty`);
+  });
+
+  getAttrs(attrs, function(v) {
+    const out = {};
+
+    for (let i = 1; i <= 2; i++) {
+      const skill = v[`weapon_${i}_skill`] || "small_arms";
+      out[`weapon_${i}_attack_total`] = n(v[`${skill}_total`]);
+      const penalty = n(v[`${skill}_strain_penalty`]);
+      const globalDis = n(v.strain_disadvantage);
+      out[`weapon_${i}_attack_prof`] = n(v[`${skill}_prof`]);
+      out[`weapon_${i}_attack_penalty`] = penalty;
+      if (penalty !== 0 && globalDis) {
+        out[`weapon_${i}_attack_strain_note`] = `${penalty} and -1d4 from excessive strain`;
+      } else if (penalty !== 0) {
+        out[`weapon_${i}_attack_strain_note`] = `${penalty}`;
+      } else if (globalDis) {
+        out[`weapon_${i}_attack_strain_note`] = "-1d4 from excessive strain";
+      } else {
+        out[`weapon_${i}_attack_strain_note`] = "";
+      }
+      out[`weapon_${i}_skill_name`] = weaponSkillNames[skill] || "Small Arms";
+    }
+
+    setAttrs(out);
+  });
+}
+
+on("change:weapon_1_skill change:weapon_2_skill change:small_arms_total change:small_arms_prof change:small_arms_strain_penalty change:big_guns_total change:big_guns_prof change:big_guns_strain_penalty change:blades_total change:blades_prof change:blades_strain_penalty change:melee_combat_total change:melee_combat_prof change:melee_combat_strain_penalty sheet:opened", recalcWeaponAttacks);
+
+on(changeEvents.join(" "), recalcBonusesAndTotals);
+on("change:small_arms_exp change:small_arms_lvl change:big_guns_exp change:big_guns_lvl change:blades_exp change:blades_lvl change:melee_combat_exp change:melee_combat_lvl change:drone_warfare_exp change:drone_warfare_lvl change:demolitions_exp change:demolitions_lvl change:evasion_skill_exp change:evasion_skill_lvl change:physique_exp change:physique_lvl change:hacking_exp change:hacking_lvl change:cybernetics_handling_exp change:cybernetics_handling_lvl change:sabotage_exp change:sabotage_lvl change:jury_rigging_exp change:jury_rigging_lvl change:engineering_exp change:engineering_lvl change:fast_talk_exp change:fast_talk_lvl change:street_cred_exp change:street_cred_lvl change:underworld_exp change:underworld_lvl change:corporate_exp change:corporate_lvl change:media_exp change:media_lvl change:persuasion_exp change:persuasion_lvl change:bullying_exp change:bullying_lvl change:infiltration_exp change:infiltration_lvl change:performance_exp change:performance_lvl change:investigation_exp change:investigation_lvl change:awareness_exp change:awareness_lvl change:scavenging_exp change:scavenging_lvl change:first_aid_exp change:first_aid_lvl change:stealth_exp change:stealth_lvl change:parkour_exp change:parkour_lvl change:piloting_exp change:piloting_lvl change:survival_exp change:survival_lvl change:xenobiology_exp change:xenobiology_lvl sheet:opened", recalcAdvanceStatuses);
+</script>
+
+
+<rolltemplate class="sheet-rolltemplate-hopepunk">
+  <div class="sheet-roll-card">
+    <div class="sheet-roll-title">{{name}}</div>
+    {{#Skill}}<div class="sheet-roll-row"><span>Skill</span><span>{{Skill}}</span></div>{{/Skill}}
+    <div class="sheet-roll-row sheet-roll-main"><span>Roll</span><span>{{Roll}}</span></div>
+    {{#Damage}}<div class="sheet-roll-row"><span>Damage</span><span>{{Damage}}</span></div>{{/Damage}}
+    {{#Effects}}<div class="sheet-roll-row"><span>Effects</span><span>{{Effects}}</span></div>{{/Effects}}
+    {{#Advantage}}<div class="sheet-roll-row sheet-roll-good"><span>Advantage</span><span>{{Advantage}}</span></div>{{/Advantage}}
+    {{#Disadvantage}}<div class="sheet-roll-row sheet-roll-bad"><span>Disadvantage</span><span>{{Disadvantage}}</span></div>{{/Disadvantage}}
+    {{#Strain}}<div class="sheet-roll-row sheet-roll-bad"><span>Strain</span><span>{{Strain}}</span></div>{{/Strain}}
+  </div>
+</rolltemplate>
+

@@ -1,0 +1,23 @@
+cat > .gitignore <<'EOF'
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+.vscode/
+.idea/
+
+# Do not commit source books, private notes, or generated art by accident
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.webm
+private/
+assets/
+art/
+maps/
+EOF
