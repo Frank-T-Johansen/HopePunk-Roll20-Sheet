@@ -28,7 +28,7 @@
       <label>Money <input type="number" name="attr_money" value="0"></label>
       <label>SP Spent from Gear <input type="number" name="attr_sp_spent" value="0" readonly></label>
       <label>Strain <input type="number" name="attr_strain_current" value="0" readonly> / <input type="number" name="attr_strain_max" value="3" readonly></label>
-      <label class="wide">Strain Status <input class="advance-status" type="text" name="attr_strain_status" value="" readonly title="Shows when this skill has enough XP to improve"></label>
+      <label class="wide">Strain Status <input class="strain-status" type="text" name="attr_strain_status" value="" readonly title="Strain penalties: at or below max = none; over by 1 = Evasion and Physique -1; over by 2 = Evasion and Physique -2 plus combat rolls -1; over by 3+ = Evasion and Physique -3, HP Max -2, and normal rolls suffer -1d4."></label>
       <label>Wounds <input type="number" name="attr_wounds" value="0"></label>
       <label>Evasion <input type="number" name="attr_evasion" value="0" readonly></label>
       <label>Damage Negation <input type="number" name="attr_damage_negation" value="0" readonly></label>
@@ -3834,7 +3834,7 @@ function recalcBonusesAndTotals() {
       const total = n(v[`${skill}_lvl`]) + n(gear[`${skill}_gear`]);
       out[`${skill}_gear`] = n(gear[`${skill}_gear`]);
       out[`${skill}_total`] = total;
-      out[`${skill}_status`] = n(v[`${skill}_exp`]) >= 5 ? "Ready to improve" : "";
+      out[`${skill}_status`] = skillAdvanceStatus(n(v[`${skill}_exp`]), n(v[`${skill}_lvl`]));
     });
 
     const level = Math.max(1, n(v.level));
@@ -3913,7 +3913,7 @@ skills.forEach(skill => {
       const out = {};
       out[`${skill}_exp`] = exp;
       out[`${skill}_status`] = skillAdvanceStatus(exp, lvl);
-      setAttrs(out, recalcBonusesAndTotals);
+      setAttrs(out, () => { recalcBonusesAndTotals(); recalcAdvanceStatuses(); });
     });
   });
 });

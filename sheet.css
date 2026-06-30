@@ -419,3 +419,18 @@
   width: 78px;
   min-width: 78px;
 }
+
+
+/* V21 Strain Status display */
+.charsheet input.strain-status[readonly] {
+  background: transparent;
+  border: none;
+  color: #555;
+  padding-left: 2px;
+  box-shadow: none;
+}
+
+.charsheet input.strain-status[readonly]:focus {
+  outline: none;
+  box-shadow: none;
+}
