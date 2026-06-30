@@ -412,3 +412,10 @@
 .sheet-rolltemplate-hopepunk .sheet-roll-row span:last-child {
   word-break: break-word;
 }
+
+
+/* V19 Adv/Dis selector */
+.charsheet .header-grid select[name="attr_advdis_level"] {
+  width: 78px;
+  min-width: 78px;
+}

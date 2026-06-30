@@ -1,6 +1,10 @@
 <div class="hopepunk-sheet">
   <input type="hidden" name="attr_hp_initialized" value="0">
   <input type="hidden" name="attr_strain_disadvantage" value="0">
+  <input type="hidden" name="attr_adv_effective_die" value="1d4">
+  <input type="hidden" name="attr_dis_effective_die" value="1d4">
+  <input type="hidden" name="attr_adv_effective_note" value="+1d4">
+  <input type="hidden" name="attr_dis_effective_note" value="-1d4">
   <header class="sheet-header">
     <div>
       <h1>HOPE//PUNK</h1>
@@ -28,6 +32,15 @@
       <label>Wounds <input type="number" name="attr_wounds" value="0"></label>
       <label>Evasion <input type="number" name="attr_evasion" value="0" readonly></label>
       <label>Damage Negation <input type="number" name="attr_damage_negation" value="0" readonly></label>
+      <label>Adv/Dis
+        <select name="attr_advdis_level" title="Temporary advantage/disadvantage strength used by all Adv. and Dis. buttons">
+          <option value="1" selected>1 / d4</option>
+          <option value="2">2 / d6</option>
+          <option value="3">3 / d8</option>
+          <option value="4">4 / d12</option>
+          <option value="5">5+ / d20</option>
+        </select>
+      </label>
       <label>Proficiencies <input type="number" name="attr_proficiency_used" value="0" readonly> / <input type="number" name="attr_proficiency_allowed" value="2" readonly></label>
     </div>
   </header>
@@ -40,7 +53,7 @@
   </section>
 <section class="box">
     <h2>Skills</h2>
-    <p class="hint">Proficiency is a checkbox. Skill Exp is spent only on that specific skill: every 10 Exp counts as 1 improvement point toward that skill. Advantage adds +1d4; Disadvantage subtracts -1d4. Skill checks use 1d20.</p>
+    <p class="hint">Proficiency is a checkbox. Skill Exp is spent only on that specific skill: every 10 Exp counts as 1 improvement point toward that skill. Advantage adds the selected Adv/Dis die; Disadvantage subtracts the selected Adv/Dis die. Skill checks use 1d20.</p>
     <div class="skill-row skill-header">
       <div>Skill</div><div>Exp.</div><div>Lvl</div><div>Gear</div><div>Prof.</div><div>Total</div><div>Roll</div><div>Adv.</div><div>Dis.</div><div>Mark</div><div>Advance</div>
     </div>
@@ -54,8 +67,8 @@
   <input type="hidden" name="attr_small_arms_strain_penalty" value="0">
   <input type="hidden" name="attr_small_arms_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_small_arms" value="&amp;{template:hopepunk} {{name=Small Arms}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_small_arms_advantage" value="&amp;{template:hopepunk} {{name=Small Arms — Advantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_small_arms_disadvantage" value="&amp;{template:hopepunk} {{name=Small Arms — Disadvantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{small_arms_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_small_arms_advantage" value="&amp;{template:hopepunk} {{name=Small Arms — Advantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{small_arms_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_small_arms_disadvantage" value="&amp;{template:hopepunk} {{name=Small Arms — Disadvantage}} {{Roll=[[1d20 + @{small_arms_total} + @{small_arms_prof}d6 + @{small_arms_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{small_arms_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_small_arms">+Fail</button>
   <input class="advance-status" type="text" name="attr_small_arms_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -68,8 +81,8 @@
   <input type="hidden" name="attr_big_guns_strain_penalty" value="0">
   <input type="hidden" name="attr_big_guns_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_big_guns" value="&amp;{template:hopepunk} {{name=Big Guns}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_big_guns_advantage" value="&amp;{template:hopepunk} {{name=Big Guns — Advantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_big_guns_disadvantage" value="&amp;{template:hopepunk} {{name=Big Guns — Disadvantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{big_guns_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_big_guns_advantage" value="&amp;{template:hopepunk} {{name=Big Guns — Advantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{big_guns_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_big_guns_disadvantage" value="&amp;{template:hopepunk} {{name=Big Guns — Disadvantage}} {{Roll=[[1d20 + @{big_guns_total} + @{big_guns_prof}d6 + @{big_guns_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{big_guns_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_big_guns">+Fail</button>
   <input class="advance-status" type="text" name="attr_big_guns_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -82,8 +95,8 @@
   <input type="hidden" name="attr_blades_strain_penalty" value="0">
   <input type="hidden" name="attr_blades_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_blades" value="&amp;{template:hopepunk} {{name=Blades}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_blades_advantage" value="&amp;{template:hopepunk} {{name=Blades — Advantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_blades_disadvantage" value="&amp;{template:hopepunk} {{name=Blades — Disadvantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{blades_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_blades_advantage" value="&amp;{template:hopepunk} {{name=Blades — Advantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{blades_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_blades_disadvantage" value="&amp;{template:hopepunk} {{name=Blades — Disadvantage}} {{Roll=[[1d20 + @{blades_total} + @{blades_prof}d6 + @{blades_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{blades_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_blades">+Fail</button>
   <input class="advance-status" type="text" name="attr_blades_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -96,8 +109,8 @@
   <input type="hidden" name="attr_melee_combat_strain_penalty" value="0">
   <input type="hidden" name="attr_melee_combat_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_melee_combat" value="&amp;{template:hopepunk} {{name=Melee Combat}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_melee_combat_advantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Advantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_melee_combat_disadvantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Disadvantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{melee_combat_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_melee_combat_advantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Advantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{melee_combat_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_melee_combat_disadvantage" value="&amp;{template:hopepunk} {{name=Melee Combat — Disadvantage}} {{Roll=[[1d20 + @{melee_combat_total} + @{melee_combat_prof}d6 + @{melee_combat_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{melee_combat_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_melee_combat">+Fail</button>
   <input class="advance-status" type="text" name="attr_melee_combat_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -110,8 +123,8 @@
   <input type="hidden" name="attr_drone_warfare_strain_penalty" value="0">
   <input type="hidden" name="attr_drone_warfare_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_drone_warfare" value="&amp;{template:hopepunk} {{name=Drone Warfare}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_drone_warfare_advantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Advantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_drone_warfare_disadvantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Disadvantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{drone_warfare_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_drone_warfare_advantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Advantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{drone_warfare_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_drone_warfare_disadvantage" value="&amp;{template:hopepunk} {{name=Drone Warfare — Disadvantage}} {{Roll=[[1d20 + @{drone_warfare_total} + @{drone_warfare_prof}d6 + @{drone_warfare_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{drone_warfare_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_drone_warfare">+Fail</button>
   <input class="advance-status" type="text" name="attr_drone_warfare_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -124,8 +137,8 @@
   <input type="hidden" name="attr_demolitions_strain_penalty" value="0">
   <input type="hidden" name="attr_demolitions_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_demolitions" value="&amp;{template:hopepunk} {{name=Demolitions}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_demolitions_advantage" value="&amp;{template:hopepunk} {{name=Demolitions — Advantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_demolitions_disadvantage" value="&amp;{template:hopepunk} {{name=Demolitions — Disadvantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{demolitions_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_demolitions_advantage" value="&amp;{template:hopepunk} {{name=Demolitions — Advantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{demolitions_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_demolitions_disadvantage" value="&amp;{template:hopepunk} {{name=Demolitions — Disadvantage}} {{Roll=[[1d20 + @{demolitions_total} + @{demolitions_prof}d6 + @{demolitions_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{demolitions_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_demolitions">+Fail</button>
   <input class="advance-status" type="text" name="attr_demolitions_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -138,8 +151,8 @@
   <input type="hidden" name="attr_evasion_skill_strain_penalty" value="0">
   <input type="hidden" name="attr_evasion_skill_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_evasion_skill" value="&amp;{template:hopepunk} {{name=Evasion}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_evasion_skill_advantage" value="&amp;{template:hopepunk} {{name=Evasion — Advantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_evasion_skill_disadvantage" value="&amp;{template:hopepunk} {{name=Evasion — Disadvantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{evasion_skill_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_evasion_skill_advantage" value="&amp;{template:hopepunk} {{name=Evasion — Advantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{evasion_skill_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_evasion_skill_disadvantage" value="&amp;{template:hopepunk} {{name=Evasion — Disadvantage}} {{Roll=[[1d20 + @{evasion_skill_total} + @{evasion_skill_prof}d6 + @{evasion_skill_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{evasion_skill_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_evasion_skill">+Fail</button>
   <input class="advance-status" type="text" name="attr_evasion_skill_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -152,8 +165,8 @@
   <input type="hidden" name="attr_physique_strain_penalty" value="0">
   <input type="hidden" name="attr_physique_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_physique" value="&amp;{template:hopepunk} {{name=Physique}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_physique_advantage" value="&amp;{template:hopepunk} {{name=Physique — Advantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_physique_disadvantage" value="&amp;{template:hopepunk} {{name=Physique — Disadvantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{physique_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_physique_advantage" value="&amp;{template:hopepunk} {{name=Physique — Advantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{physique_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_physique_disadvantage" value="&amp;{template:hopepunk} {{name=Physique — Disadvantage}} {{Roll=[[1d20 + @{physique_total} + @{physique_prof}d6 + @{physique_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{physique_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_physique">+Fail</button>
   <input class="advance-status" type="text" name="attr_physique_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-category">CYBERNETICS // TECHNOLOGY</div><div class="skill-row">
@@ -166,8 +179,8 @@
   <input type="hidden" name="attr_hacking_strain_penalty" value="0">
   <input type="hidden" name="attr_hacking_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_hacking" value="&amp;{template:hopepunk} {{name=Hacking}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_hacking_advantage" value="&amp;{template:hopepunk} {{name=Hacking — Advantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_hacking_disadvantage" value="&amp;{template:hopepunk} {{name=Hacking — Disadvantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{hacking_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_hacking_advantage" value="&amp;{template:hopepunk} {{name=Hacking — Advantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{hacking_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_hacking_disadvantage" value="&amp;{template:hopepunk} {{name=Hacking — Disadvantage}} {{Roll=[[1d20 + @{hacking_total} + @{hacking_prof}d6 + @{hacking_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{hacking_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_hacking">+Fail</button>
   <input class="advance-status" type="text" name="attr_hacking_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -180,8 +193,8 @@
   <input type="hidden" name="attr_cybernetics_handling_strain_penalty" value="0">
   <input type="hidden" name="attr_cybernetics_handling_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_cybernetics_handling" value="&amp;{template:hopepunk} {{name=Cybernetics Handling}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_cybernetics_handling_advantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Advantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_cybernetics_handling_disadvantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Disadvantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_cybernetics_handling_advantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Advantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_cybernetics_handling_disadvantage" value="&amp;{template:hopepunk} {{name=Cybernetics Handling — Disadvantage}} {{Roll=[[1d20 + @{cybernetics_handling_total} + @{cybernetics_handling_prof}d6 + @{cybernetics_handling_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{cybernetics_handling_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_cybernetics_handling">+Fail</button>
   <input class="advance-status" type="text" name="attr_cybernetics_handling_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -194,8 +207,8 @@
   <input type="hidden" name="attr_sabotage_strain_penalty" value="0">
   <input type="hidden" name="attr_sabotage_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_sabotage" value="&amp;{template:hopepunk} {{name=Sabotage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_sabotage_advantage" value="&amp;{template:hopepunk} {{name=Sabotage — Advantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_sabotage_disadvantage" value="&amp;{template:hopepunk} {{name=Sabotage — Disadvantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{sabotage_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_sabotage_advantage" value="&amp;{template:hopepunk} {{name=Sabotage — Advantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{sabotage_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_sabotage_disadvantage" value="&amp;{template:hopepunk} {{name=Sabotage — Disadvantage}} {{Roll=[[1d20 + @{sabotage_total} + @{sabotage_prof}d6 + @{sabotage_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{sabotage_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_sabotage">+Fail</button>
   <input class="advance-status" type="text" name="attr_sabotage_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -208,8 +221,8 @@
   <input type="hidden" name="attr_jury_rigging_strain_penalty" value="0">
   <input type="hidden" name="attr_jury_rigging_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_jury_rigging" value="&amp;{template:hopepunk} {{name=Jury-Rigging}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_jury_rigging_advantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Advantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_jury_rigging_disadvantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Disadvantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{jury_rigging_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_jury_rigging_advantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Advantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{jury_rigging_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_jury_rigging_disadvantage" value="&amp;{template:hopepunk} {{name=Jury-Rigging — Disadvantage}} {{Roll=[[1d20 + @{jury_rigging_total} + @{jury_rigging_prof}d6 + @{jury_rigging_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{jury_rigging_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_jury_rigging">+Fail</button>
   <input class="advance-status" type="text" name="attr_jury_rigging_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -222,8 +235,8 @@
   <input type="hidden" name="attr_engineering_strain_penalty" value="0">
   <input type="hidden" name="attr_engineering_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_engineering" value="&amp;{template:hopepunk} {{name=Engineering}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_engineering_advantage" value="&amp;{template:hopepunk} {{name=Engineering — Advantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_engineering_disadvantage" value="&amp;{template:hopepunk} {{name=Engineering — Disadvantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{engineering_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_engineering_advantage" value="&amp;{template:hopepunk} {{name=Engineering — Advantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{engineering_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_engineering_disadvantage" value="&amp;{template:hopepunk} {{name=Engineering — Disadvantage}} {{Roll=[[1d20 + @{engineering_total} + @{engineering_prof}d6 + @{engineering_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{engineering_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_engineering">+Fail</button>
   <input class="advance-status" type="text" name="attr_engineering_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-category">SOCIAL // INFLUENCE</div><div class="skill-row">
@@ -236,8 +249,8 @@
   <input type="hidden" name="attr_fast_talk_strain_penalty" value="0">
   <input type="hidden" name="attr_fast_talk_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_fast_talk" value="&amp;{template:hopepunk} {{name=Fast Talk}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_fast_talk_advantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Advantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_fast_talk_disadvantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Disadvantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{fast_talk_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_fast_talk_advantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Advantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{fast_talk_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_fast_talk_disadvantage" value="&amp;{template:hopepunk} {{name=Fast Talk — Disadvantage}} {{Roll=[[1d20 + @{fast_talk_total} + @{fast_talk_prof}d6 + @{fast_talk_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{fast_talk_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_fast_talk">+Fail</button>
   <input class="advance-status" type="text" name="attr_fast_talk_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -250,8 +263,8 @@
   <input type="hidden" name="attr_street_cred_strain_penalty" value="0">
   <input type="hidden" name="attr_street_cred_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_street_cred" value="&amp;{template:hopepunk} {{name=Street Cred}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_street_cred_advantage" value="&amp;{template:hopepunk} {{name=Street Cred — Advantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_street_cred_disadvantage" value="&amp;{template:hopepunk} {{name=Street Cred — Disadvantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{street_cred_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_street_cred_advantage" value="&amp;{template:hopepunk} {{name=Street Cred — Advantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{street_cred_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_street_cred_disadvantage" value="&amp;{template:hopepunk} {{name=Street Cred — Disadvantage}} {{Roll=[[1d20 + @{street_cred_total} + @{street_cred_prof}d6 + @{street_cred_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{street_cred_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_street_cred">+Fail</button>
   <input class="advance-status" type="text" name="attr_street_cred_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -264,8 +277,8 @@
   <input type="hidden" name="attr_underworld_strain_penalty" value="0">
   <input type="hidden" name="attr_underworld_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_underworld" value="&amp;{template:hopepunk} {{name=Underworld}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_underworld_advantage" value="&amp;{template:hopepunk} {{name=Underworld — Advantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_underworld_disadvantage" value="&amp;{template:hopepunk} {{name=Underworld — Disadvantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{underworld_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_underworld_advantage" value="&amp;{template:hopepunk} {{name=Underworld — Advantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{underworld_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_underworld_disadvantage" value="&amp;{template:hopepunk} {{name=Underworld — Disadvantage}} {{Roll=[[1d20 + @{underworld_total} + @{underworld_prof}d6 + @{underworld_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{underworld_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_underworld">+Fail</button>
   <input class="advance-status" type="text" name="attr_underworld_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -278,8 +291,8 @@
   <input type="hidden" name="attr_corporate_strain_penalty" value="0">
   <input type="hidden" name="attr_corporate_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_corporate" value="&amp;{template:hopepunk} {{name=Corporate}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_corporate_advantage" value="&amp;{template:hopepunk} {{name=Corporate — Advantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_corporate_disadvantage" value="&amp;{template:hopepunk} {{name=Corporate — Disadvantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{corporate_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_corporate_advantage" value="&amp;{template:hopepunk} {{name=Corporate — Advantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{corporate_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_corporate_disadvantage" value="&amp;{template:hopepunk} {{name=Corporate — Disadvantage}} {{Roll=[[1d20 + @{corporate_total} + @{corporate_prof}d6 + @{corporate_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{corporate_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_corporate">+Fail</button>
   <input class="advance-status" type="text" name="attr_corporate_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -292,8 +305,8 @@
   <input type="hidden" name="attr_media_strain_penalty" value="0">
   <input type="hidden" name="attr_media_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_media" value="&amp;{template:hopepunk} {{name=Media}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_media_advantage" value="&amp;{template:hopepunk} {{name=Media — Advantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_media_disadvantage" value="&amp;{template:hopepunk} {{name=Media — Disadvantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{media_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_media_advantage" value="&amp;{template:hopepunk} {{name=Media — Advantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{media_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_media_disadvantage" value="&amp;{template:hopepunk} {{name=Media — Disadvantage}} {{Roll=[[1d20 + @{media_total} + @{media_prof}d6 + @{media_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{media_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_media">+Fail</button>
   <input class="advance-status" type="text" name="attr_media_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -306,8 +319,8 @@
   <input type="hidden" name="attr_persuasion_strain_penalty" value="0">
   <input type="hidden" name="attr_persuasion_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_persuasion" value="&amp;{template:hopepunk} {{name=Persuasion}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_persuasion_advantage" value="&amp;{template:hopepunk} {{name=Persuasion — Advantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_persuasion_disadvantage" value="&amp;{template:hopepunk} {{name=Persuasion — Disadvantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{persuasion_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_persuasion_advantage" value="&amp;{template:hopepunk} {{name=Persuasion — Advantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{persuasion_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_persuasion_disadvantage" value="&amp;{template:hopepunk} {{name=Persuasion — Disadvantage}} {{Roll=[[1d20 + @{persuasion_total} + @{persuasion_prof}d6 + @{persuasion_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{persuasion_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_persuasion">+Fail</button>
   <input class="advance-status" type="text" name="attr_persuasion_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -320,8 +333,8 @@
   <input type="hidden" name="attr_bullying_strain_penalty" value="0">
   <input type="hidden" name="attr_bullying_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_bullying" value="&amp;{template:hopepunk} {{name=Bullying}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_bullying_advantage" value="&amp;{template:hopepunk} {{name=Bullying — Advantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_bullying_disadvantage" value="&amp;{template:hopepunk} {{name=Bullying — Disadvantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{bullying_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_bullying_advantage" value="&amp;{template:hopepunk} {{name=Bullying — Advantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{bullying_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_bullying_disadvantage" value="&amp;{template:hopepunk} {{name=Bullying — Disadvantage}} {{Roll=[[1d20 + @{bullying_total} + @{bullying_prof}d6 + @{bullying_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{bullying_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_bullying">+Fail</button>
   <input class="advance-status" type="text" name="attr_bullying_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -334,8 +347,8 @@
   <input type="hidden" name="attr_infiltration_strain_penalty" value="0">
   <input type="hidden" name="attr_infiltration_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_infiltration" value="&amp;{template:hopepunk} {{name=Infiltration}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_infiltration_advantage" value="&amp;{template:hopepunk} {{name=Infiltration — Advantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_infiltration_disadvantage" value="&amp;{template:hopepunk} {{name=Infiltration — Disadvantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{infiltration_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_infiltration_advantage" value="&amp;{template:hopepunk} {{name=Infiltration — Advantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{infiltration_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_infiltration_disadvantage" value="&amp;{template:hopepunk} {{name=Infiltration — Disadvantage}} {{Roll=[[1d20 + @{infiltration_total} + @{infiltration_prof}d6 + @{infiltration_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{infiltration_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_infiltration">+Fail</button>
   <input class="advance-status" type="text" name="attr_infiltration_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -348,8 +361,8 @@
   <input type="hidden" name="attr_performance_strain_penalty" value="0">
   <input type="hidden" name="attr_performance_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_performance" value="&amp;{template:hopepunk} {{name=Performance}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_performance_advantage" value="&amp;{template:hopepunk} {{name=Performance — Advantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_performance_disadvantage" value="&amp;{template:hopepunk} {{name=Performance — Disadvantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{performance_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_performance_advantage" value="&amp;{template:hopepunk} {{name=Performance — Advantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{performance_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_performance_disadvantage" value="&amp;{template:hopepunk} {{name=Performance — Disadvantage}} {{Roll=[[1d20 + @{performance_total} + @{performance_prof}d6 + @{performance_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{performance_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_performance">+Fail</button>
   <input class="advance-status" type="text" name="attr_performance_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -362,8 +375,8 @@
   <input type="hidden" name="attr_investigation_strain_penalty" value="0">
   <input type="hidden" name="attr_investigation_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_investigation" value="&amp;{template:hopepunk} {{name=Investigation}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_investigation_advantage" value="&amp;{template:hopepunk} {{name=Investigation — Advantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_investigation_disadvantage" value="&amp;{template:hopepunk} {{name=Investigation — Disadvantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{investigation_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_investigation_advantage" value="&amp;{template:hopepunk} {{name=Investigation — Advantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{investigation_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_investigation_disadvantage" value="&amp;{template:hopepunk} {{name=Investigation — Disadvantage}} {{Roll=[[1d20 + @{investigation_total} + @{investigation_prof}d6 + @{investigation_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{investigation_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_investigation">+Fail</button>
   <input class="advance-status" type="text" name="attr_investigation_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-category">SURVIVAL // UTILITY</div><div class="skill-row">
@@ -376,8 +389,8 @@
   <input type="hidden" name="attr_awareness_strain_penalty" value="0">
   <input type="hidden" name="attr_awareness_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_awareness" value="&amp;{template:hopepunk} {{name=Awareness}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_awareness_advantage" value="&amp;{template:hopepunk} {{name=Awareness — Advantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_awareness_disadvantage" value="&amp;{template:hopepunk} {{name=Awareness — Disadvantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{awareness_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_awareness_advantage" value="&amp;{template:hopepunk} {{name=Awareness — Advantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{awareness_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_awareness_disadvantage" value="&amp;{template:hopepunk} {{name=Awareness — Disadvantage}} {{Roll=[[1d20 + @{awareness_total} + @{awareness_prof}d6 + @{awareness_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{awareness_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_awareness">+Fail</button>
   <input class="advance-status" type="text" name="attr_awareness_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -390,8 +403,8 @@
   <input type="hidden" name="attr_scavenging_strain_penalty" value="0">
   <input type="hidden" name="attr_scavenging_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_scavenging" value="&amp;{template:hopepunk} {{name=Scavenging}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_scavenging_advantage" value="&amp;{template:hopepunk} {{name=Scavenging — Advantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_scavenging_disadvantage" value="&amp;{template:hopepunk} {{name=Scavenging — Disadvantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{scavenging_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_scavenging_advantage" value="&amp;{template:hopepunk} {{name=Scavenging — Advantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{scavenging_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_scavenging_disadvantage" value="&amp;{template:hopepunk} {{name=Scavenging — Disadvantage}} {{Roll=[[1d20 + @{scavenging_total} + @{scavenging_prof}d6 + @{scavenging_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{scavenging_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_scavenging">+Fail</button>
   <input class="advance-status" type="text" name="attr_scavenging_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -404,8 +417,8 @@
   <input type="hidden" name="attr_first_aid_strain_penalty" value="0">
   <input type="hidden" name="attr_first_aid_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_first_aid" value="&amp;{template:hopepunk} {{name=First Aid}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_first_aid_advantage" value="&amp;{template:hopepunk} {{name=First Aid — Advantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_first_aid_disadvantage" value="&amp;{template:hopepunk} {{name=First Aid — Disadvantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{first_aid_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_first_aid_advantage" value="&amp;{template:hopepunk} {{name=First Aid — Advantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{first_aid_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_first_aid_disadvantage" value="&amp;{template:hopepunk} {{name=First Aid — Disadvantage}} {{Roll=[[1d20 + @{first_aid_total} + @{first_aid_prof}d6 + @{first_aid_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{first_aid_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_first_aid">+Fail</button>
   <input class="advance-status" type="text" name="attr_first_aid_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -418,8 +431,8 @@
   <input type="hidden" name="attr_stealth_strain_penalty" value="0">
   <input type="hidden" name="attr_stealth_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_stealth" value="&amp;{template:hopepunk} {{name=Stealth}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_stealth_advantage" value="&amp;{template:hopepunk} {{name=Stealth — Advantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_stealth_disadvantage" value="&amp;{template:hopepunk} {{name=Stealth — Disadvantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{stealth_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_stealth_advantage" value="&amp;{template:hopepunk} {{name=Stealth — Advantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{stealth_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_stealth_disadvantage" value="&amp;{template:hopepunk} {{name=Stealth — Disadvantage}} {{Roll=[[1d20 + @{stealth_total} + @{stealth_prof}d6 + @{stealth_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{stealth_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_stealth">+Fail</button>
   <input class="advance-status" type="text" name="attr_stealth_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -432,8 +445,8 @@
   <input type="hidden" name="attr_parkour_strain_penalty" value="0">
   <input type="hidden" name="attr_parkour_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_parkour" value="&amp;{template:hopepunk} {{name=Parkour}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_parkour_advantage" value="&amp;{template:hopepunk} {{name=Parkour — Advantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_parkour_disadvantage" value="&amp;{template:hopepunk} {{name=Parkour — Disadvantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{parkour_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_parkour_advantage" value="&amp;{template:hopepunk} {{name=Parkour — Advantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{parkour_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_parkour_disadvantage" value="&amp;{template:hopepunk} {{name=Parkour — Disadvantage}} {{Roll=[[1d20 + @{parkour_total} + @{parkour_prof}d6 + @{parkour_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{parkour_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_parkour">+Fail</button>
   <input class="advance-status" type="text" name="attr_parkour_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -446,8 +459,8 @@
   <input type="hidden" name="attr_piloting_strain_penalty" value="0">
   <input type="hidden" name="attr_piloting_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_piloting" value="&amp;{template:hopepunk} {{name=Piloting}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_piloting_advantage" value="&amp;{template:hopepunk} {{name=Piloting — Advantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_piloting_disadvantage" value="&amp;{template:hopepunk} {{name=Piloting — Disadvantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{piloting_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_piloting_advantage" value="&amp;{template:hopepunk} {{name=Piloting — Advantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{piloting_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_piloting_disadvantage" value="&amp;{template:hopepunk} {{name=Piloting — Disadvantage}} {{Roll=[[1d20 + @{piloting_total} + @{piloting_prof}d6 + @{piloting_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{piloting_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_piloting">+Fail</button>
   <input class="advance-status" type="text" name="attr_piloting_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -460,8 +473,8 @@
   <input type="hidden" name="attr_survival_strain_penalty" value="0">
   <input type="hidden" name="attr_survival_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_survival" value="&amp;{template:hopepunk} {{name=Survival}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_survival_advantage" value="&amp;{template:hopepunk} {{name=Survival — Advantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_survival_disadvantage" value="&amp;{template:hopepunk} {{name=Survival — Disadvantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{survival_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_survival_advantage" value="&amp;{template:hopepunk} {{name=Survival — Advantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{survival_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_survival_disadvantage" value="&amp;{template:hopepunk} {{name=Survival — Disadvantage}} {{Roll=[[1d20 + @{survival_total} + @{survival_prof}d6 + @{survival_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{survival_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_survival">+Fail</button>
   <input class="advance-status" type="text" name="attr_survival_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div><div class="skill-row">
@@ -474,8 +487,8 @@
   <input type="hidden" name="attr_xenobiology_strain_penalty" value="0">
   <input type="hidden" name="attr_xenobiology_strain_note" value="">
   <button class="skill-roll" type="roll" name="roll_xenobiology" value="&amp;{template:hopepunk} {{name=Xenobiology}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}}"></button>
-  <button class="advantage-roll" type="roll" name="roll_xenobiology_advantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Advantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}} {{Advantage=+1d4}}"></button>
-  <button class="disadvantage-roll" type="roll" name="roll_xenobiology_disadvantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Disadvantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Strain=@{xenobiology_strain_note}}} {{Disadvantage=-1d4}}"></button>
+  <button class="advantage-roll" type="roll" name="roll_xenobiology_advantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Advantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} + @{adv_effective_die}]]}} {{Strain=@{xenobiology_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+  <button class="disadvantage-roll" type="roll" name="roll_xenobiology_disadvantage" value="&amp;{template:hopepunk} {{name=Xenobiology — Disadvantage}} {{Roll=[[1d20 + @{xenobiology_total} + @{xenobiology_prof}d6 + @{xenobiology_strain_penalty} - @{dis_effective_die}]]}} {{Strain=@{xenobiology_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   <button type="action" name="act_mark_xenobiology">+Fail</button>
   <input class="advance-status" type="text" name="attr_xenobiology_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div>
@@ -1577,8 +1590,8 @@
   <label>Effects <textarea name="attr_weapon_1_effects" placeholder="Example: Save 12 or be stunned 1 round"></textarea></label>
   <div class="weapon-buttons">
     <button type="roll" class="weapon-attack" name="roll_weapon_1_attack" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Traits=@{weapon_1_traits_summary}}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}}"></button>
-    <button type="roll" class="weapon-advantage" name="roll_weapon_1_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Advantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Traits=@{weapon_1_traits_summary}}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Advantage=+1d4}}"></button>
-    <button type="roll" class="weapon-disadvantage" name="roll_weapon_1_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Disadvantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Traits=@{weapon_1_traits_summary}}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Disadvantage=-1d4}}"></button>
+    <button type="roll" class="weapon-advantage" name="roll_weapon_1_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Advantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} + @{adv_effective_die}]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Traits=@{weapon_1_traits_summary}}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+    <button type="roll" class="weapon-disadvantage" name="roll_weapon_1_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_1_name} Disadvantage Attack}} {{Skill=@{weapon_1_skill_name}}} {{Roll=[[1d20 + @{weapon_1_attack_total} + @{weapon_1_attack_prof}d6 + @{weapon_1_attack_penalty} - @{dis_effective_die}]]}} {{Damage=[[@{weapon_1_damage}]]}} {{Traits=@{weapon_1_traits_summary}}} {{Effects=@{weapon_1_effects}}} {{Strain=@{weapon_1_attack_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   </div>
   <label>Description <textarea name="attr_weapon_1_description"></textarea></label>
   <div class="trait-selects">
@@ -1857,8 +1870,8 @@
   <label>Effects <textarea name="attr_weapon_2_effects" placeholder="Example: Save 12 or be stunned 1 round"></textarea></label>
   <div class="weapon-buttons">
     <button type="roll" class="weapon-attack" name="roll_weapon_2_attack" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Traits=@{weapon_2_traits_summary}}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}}"></button>
-    <button type="roll" class="weapon-advantage" name="roll_weapon_2_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Advantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} + 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Traits=@{weapon_2_traits_summary}}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Advantage=+1d4}}"></button>
-    <button type="roll" class="weapon-disadvantage" name="roll_weapon_2_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Disadvantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} - 1d4 - @{strain_disadvantage}d4]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Traits=@{weapon_2_traits_summary}}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Disadvantage=-1d4}}"></button>
+    <button type="roll" class="weapon-advantage" name="roll_weapon_2_advantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Advantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} + @{adv_effective_die}]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Traits=@{weapon_2_traits_summary}}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Advantage=@{adv_effective_note}}}"></button>
+    <button type="roll" class="weapon-disadvantage" name="roll_weapon_2_disadvantage" value="&amp;{template:hopepunk} {{name=@{weapon_2_name} Disadvantage Attack}} {{Skill=@{weapon_2_skill_name}}} {{Roll=[[1d20 + @{weapon_2_attack_total} + @{weapon_2_attack_prof}d6 + @{weapon_2_attack_penalty} - @{dis_effective_die}]]}} {{Damage=[[@{weapon_2_damage}]]}} {{Traits=@{weapon_2_traits_summary}}} {{Effects=@{weapon_2_effects}}} {{Strain=@{weapon_2_attack_strain_note}}} {{Disadvantage=@{dis_effective_note}}}"></button>
   </div>
   <label>Description <textarea name="attr_weapon_2_description"></textarea></label>
   <div class="trait-selects">
@@ -3728,6 +3741,38 @@ function recalcAdvanceStatuses() {
   });
 }
 
+function advantageDieFromCount(count) {
+  if (count <= 0) return "0d1";
+  if (count === 1) return "1d4";
+  if (count === 2) return "1d6";
+  if (count === 3) return "1d8";
+  if (count === 4) return "1d12";
+  return "1d20";
+}
+
+function advantageLabelFromCount(count, sign) {
+  const die = advantageDieFromCount(count);
+  if (count <= 0) return "none";
+  return `${sign}${die}`;
+}
+
+function recalcAdvDisDice() {
+  getAttrs(["advdis_level", "strain_disadvantage"], v => {
+    const selected = Math.max(1, n(v.advdis_level) || 1);
+    const strainDis = n(v.strain_disadvantage);
+
+    const effectiveAdv = selected - strainDis;
+    const effectiveDis = selected + strainDis;
+
+    setAttrs({
+      adv_effective_die: advantageDieFromCount(effectiveAdv),
+      dis_effective_die: advantageDieFromCount(effectiveDis),
+      adv_effective_note: advantageLabelFromCount(effectiveAdv, "+"),
+      dis_effective_note: advantageLabelFromCount(effectiveDis, "-")
+    }, {silent: true});
+  });
+}
+
 function zeroGearBonuses() {
   const out = {};
   skills.forEach(skill => out[`${skill}_gear`] = 0);
@@ -3856,7 +3901,7 @@ function recalcBonusesAndTotals() {
     }
     out.sp_spent = spentSp;
 
-    setAttrs(out, recalcWeaponAttacks);
+    setAttrs(out, () => { recalcWeaponAttacks(); recalcAdvDisDice(); });
   });
 }
 
@@ -3942,6 +3987,7 @@ on("change:weapon_1_skill change:weapon_2_skill change:small_arms_total change:s
 
 on(changeEvents.join(" "), recalcBonusesAndTotals);
 on("change:small_arms_exp change:small_arms_lvl change:big_guns_exp change:big_guns_lvl change:blades_exp change:blades_lvl change:melee_combat_exp change:melee_combat_lvl change:drone_warfare_exp change:drone_warfare_lvl change:demolitions_exp change:demolitions_lvl change:evasion_skill_exp change:evasion_skill_lvl change:physique_exp change:physique_lvl change:hacking_exp change:hacking_lvl change:cybernetics_handling_exp change:cybernetics_handling_lvl change:sabotage_exp change:sabotage_lvl change:jury_rigging_exp change:jury_rigging_lvl change:engineering_exp change:engineering_lvl change:fast_talk_exp change:fast_talk_lvl change:street_cred_exp change:street_cred_lvl change:underworld_exp change:underworld_lvl change:corporate_exp change:corporate_lvl change:media_exp change:media_lvl change:persuasion_exp change:persuasion_lvl change:bullying_exp change:bullying_lvl change:infiltration_exp change:infiltration_lvl change:performance_exp change:performance_lvl change:investigation_exp change:investigation_lvl change:awareness_exp change:awareness_lvl change:scavenging_exp change:scavenging_lvl change:first_aid_exp change:first_aid_lvl change:stealth_exp change:stealth_lvl change:parkour_exp change:parkour_lvl change:piloting_exp change:piloting_lvl change:survival_exp change:survival_lvl change:xenobiology_exp change:xenobiology_lvl sheet:opened", recalcAdvanceStatuses);
+on("change:advdis_level change:strain_disadvantage sheet:opened", recalcAdvDisDice);
 </script>
 
 
