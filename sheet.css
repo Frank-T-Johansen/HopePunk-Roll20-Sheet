@@ -386,3 +386,29 @@
 .charsheet .move-fly-pair input[type="number"] {
   width: 52px;
 }
+
+
+/* V18 item trait dropdowns */
+.charsheet .trait-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.charsheet .trait-selects .trait-label {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.charsheet .trait-selects select {
+  width: 100%;
+  min-width: 0;
+  font-size: 11px;
+}
+
+.sheet-rolltemplate-hopepunk .sheet-roll-row span:last-child {
+  word-break: break-word;
+}
