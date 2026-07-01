@@ -9,11 +9,6 @@ Thumbs.db
 
 # Do not commit source books, private notes, or generated art by accident
 *.pdf
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.gif
 *.mp4
 *.webm
 private/
