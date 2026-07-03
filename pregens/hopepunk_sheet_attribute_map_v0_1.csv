@@ -1,0 +1,71 @@
+field,roll20_attribute,notes
+Character name,character_name,Top-level sheet field
+Player name,player_name,Blank in pregens
+Samurai handle,samurai_handle,Blank because pregens are not Samurai yet
+Level,level,Set to 1
+Money,money,Starting credits only; debt stored in notes
+Background,background,Background name
+Background Ability,background_ability,Ability name and text
+Allowed proficiencies,proficiency_allowed,Set to 2
+Small Arms level,small_arms_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Small Arms proficiency,small_arms_prof,1 if proficient; omitted/0 otherwise
+Big Guns level,big_guns_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Big Guns proficiency,big_guns_prof,1 if proficient; omitted/0 otherwise
+Blades level,blades_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Blades proficiency,blades_prof,1 if proficient; omitted/0 otherwise
+Melee Combat level,melee_combat_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Melee Combat proficiency,melee_combat_prof,1 if proficient; omitted/0 otherwise
+Drone Warfare level,drone_warfare_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Drone Warfare proficiency,drone_warfare_prof,1 if proficient; omitted/0 otherwise
+Demolitions level,demolitions_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Demolitions proficiency,demolitions_prof,1 if proficient; omitted/0 otherwise
+Evasion level,evasion_skill_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Evasion proficiency,evasion_skill_prof,1 if proficient; omitted/0 otherwise
+Physique level,physique_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Physique proficiency,physique_prof,1 if proficient; omitted/0 otherwise
+Hacking level,hacking_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Hacking proficiency,hacking_prof,1 if proficient; omitted/0 otherwise
+Cybernetics Handling level,cybernetics_handling_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Cybernetics Handling proficiency,cybernetics_handling_prof,1 if proficient; omitted/0 otherwise
+Sabotage level,sabotage_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Sabotage proficiency,sabotage_prof,1 if proficient; omitted/0 otherwise
+Jury-Rigging level,jury_rigging_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Jury-Rigging proficiency,jury_rigging_prof,1 if proficient; omitted/0 otherwise
+Engineering level,engineering_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Engineering proficiency,engineering_prof,1 if proficient; omitted/0 otherwise
+Fast Talk level,fast_talk_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Fast Talk proficiency,fast_talk_prof,1 if proficient; omitted/0 otherwise
+Street Cred level,street_cred_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Street Cred proficiency,street_cred_prof,1 if proficient; omitted/0 otherwise
+Underworld level,underworld_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Underworld proficiency,underworld_prof,1 if proficient; omitted/0 otherwise
+Corporate level,corporate_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Corporate proficiency,corporate_prof,1 if proficient; omitted/0 otherwise
+Media level,media_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Media proficiency,media_prof,1 if proficient; omitted/0 otherwise
+Persuasion level,persuasion_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Persuasion proficiency,persuasion_prof,1 if proficient; omitted/0 otherwise
+Bullying level,bullying_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Bullying proficiency,bullying_prof,1 if proficient; omitted/0 otherwise
+Infiltration level,infiltration_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Infiltration proficiency,infiltration_prof,1 if proficient; omitted/0 otherwise
+Performance level,performance_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Performance proficiency,performance_prof,1 if proficient; omitted/0 otherwise
+Investigation level,investigation_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Investigation proficiency,investigation_prof,1 if proficient; omitted/0 otherwise
+Awareness level,awareness_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Awareness proficiency,awareness_prof,1 if proficient; omitted/0 otherwise
+Scavenging level,scavenging_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Scavenging proficiency,scavenging_prof,1 if proficient; omitted/0 otherwise
+First Aid level,first_aid_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+First Aid proficiency,first_aid_prof,1 if proficient; omitted/0 otherwise
+Stealth level,stealth_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Stealth proficiency,stealth_prof,1 if proficient; omitted/0 otherwise
+Parkour level,parkour_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Parkour proficiency,parkour_prof,1 if proficient; omitted/0 otherwise
+Piloting level,piloting_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Piloting proficiency,piloting_prof,1 if proficient; omitted/0 otherwise
+Survival level,survival_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Survival proficiency,survival_prof,1 if proficient; omitted/0 otherwise
+Xenobiology level,xenobiology_lvl,Set to 1 or 2 for Background skills; omitted/0 otherwise
+Xenobiology proficiency,xenobiology_prof,1 if proficient; omitted/0 otherwise
