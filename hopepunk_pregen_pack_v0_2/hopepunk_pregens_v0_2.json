@@ -1,0 +1,3633 @@
+{
+  "metadata": {
+    "system": "Hope//Punk",
+    "source": "SCSTTRPG - HopePunk V0.84.pdf",
+    "purpose": "Roll20 starter-addon pregenerated civilian characters",
+    "version": "0.2",
+    "notes": "All characters are pre-Samurai civilian pregens. Starting proficiencies and 2 starting Skill Points have been assigned for ready-to-play use.",
+    "gear_pass": "Civilian Gear catalogue and background gear mappings added from rulebook pages 79-90."
+  },
+  "pregens": [
+    {
+      "id": "bounty_hunter",
+      "background": "Bounty Hunter",
+      "name": "Marcus Vale",
+      "handle": "Tagger",
+      "page": 17,
+      "concept": "Patient tracker and street-level contract hunter.",
+      "summary": "You track, trap, and terminate: whether for a payday or just the thrill.",
+      "skills": [
+        "Investigation",
+        "Drone Warfare",
+        "Small Arms",
+        "Demolitions"
+      ],
+      "proficiencies": [
+        "Small Arms",
+        "Investigation"
+      ],
+      "upgrades": [
+        "Small Arms",
+        "Investigation"
+      ],
+      "ability_name": "The Hunt Never Ends",
+      "ability_text": "Once per day, declare a target. You gain +2 to all rolls that involve tracking, hunting, or hitting that one target in combat. The target does not need to be known to you; it can just be something you are hunting.",
+      "home": "A crumbling safehouse in an abandoned police precinct, reinforced doors but no running water.",
+      "clothes": [
+        "Long reinforced duster",
+        "Ballistic vest underneath"
+      ],
+      "weapons": [
+        "Custom revolver",
+        "Collapsible baton"
+      ],
+      "equipment": [
+        "Facial recognition scanner",
+        "Stun cuffs",
+        "Cigarette case filled with encrypted data chips"
+      ],
+      "credits": 15000,
+      "debt": "Owe a bounty to the wrong people.",
+      "skills_prepared": {
+        "Investigation": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "investigation",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Drone Warfare": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "drone_warfare",
+          "source": "background"
+        },
+        "Small Arms": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "small_arms",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Demolitions": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "demolitions",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Marcus Vale",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 15000,
+        "background": "Bounty Hunter",
+        "background_ability": "The Hunt Never Ends — Once per day, declare a target. You gain +2 to all rolls that involve tracking, hunting, or hitting that one target in combat. The target does not need to be known to you; it can just be something you are hunting.",
+        "proficiency_allowed": 2,
+        "investigation_lvl": 2,
+        "investigation_prof": 1,
+        "drone_warfare_lvl": 1,
+        "drone_warfare_prof": 0,
+        "small_arms_lvl": 2,
+        "small_arms_prof": 1,
+        "demolitions_lvl": 1,
+        "demolitions_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Custom Revolver",
+            "original_text": "Custom revolver",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Custom Revolver",
+            "tier": "Background Gear",
+            "traits": "Small Arm",
+            "credit_cost": 800,
+            "skill": "Small Arms",
+            "damage": "1D6",
+            "range": "30 Feet"
+          },
+          {
+            "display_name": "Collapsible Baton",
+            "original_text": "Collapsible baton",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Collapsible Baton",
+            "tier": "Background Gear",
+            "traits": "Melee, Concealable",
+            "credit_cost": 200,
+            "skill": "Melee Combat",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Long Reinforced Duster",
+            "original_text": "Long reinforced duster",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Long Reinforced Duster",
+            "tier": "Background Gear",
+            "traits": "Medium",
+            "credit_cost": 550,
+            "damage_negation": 2,
+            "weight": "Medium"
+          },
+          {
+            "display_name": "Ballistic Vest",
+            "original_text": "Ballistic vest underneath",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Ballistic Vest",
+            "tier": "Background Gear",
+            "traits": "Light, Accessory",
+            "credit_cost": 500,
+            "damage_negation": 1,
+            "weight": "Light"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Facial Recognition Scanner",
+            "original_text": "Facial recognition scanner",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Facial Recognition Scanner",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Sensor",
+            "credit_cost": 1000,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "Stun Cuffs",
+            "original_text": "Stun cuffs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Stun Cuffs",
+            "tier": "Tech Items",
+            "traits": "",
+            "credit_cost": 350,
+            "description": "If placed on an incapacitated target, Stuns them if they try to move too vigorously."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Cigarette case filled with encrypted data chips",
+            "original_text": "Cigarette case filled with encrypted data chips",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "cat_burglar",
+      "background": "Cat Burglar",
+      "name": "Lena Cross",
+      "handle": "Slip",
+      "page": 18,
+      "concept": "Quiet thief who lives three exits ahead of the alarm.",
+      "summary": "The only thing you want is other people's stuff.",
+      "skills": [
+        "Stealth",
+        "Sabotage",
+        "Fast Talk",
+        "Infiltration"
+      ],
+      "proficiencies": [
+        "Stealth",
+        "Infiltration"
+      ],
+      "upgrades": [
+        "Stealth",
+        "Infiltration"
+      ],
+      "ability_name": "Just Someone in the Crowd",
+      "ability_text": "Once per day, as long as you are in or near a crowd, you can instantly lose any pursuit. Gain +2 to Stealth for the purposes of breaking and entering.",
+      "home": "Someone else's apartment. You are not supposed to be staying there, and yet you still are.",
+      "clothes": [
+        "Skintight catsuit underneath perfectly ordinary clothes"
+      ],
+      "weapons": [
+        "Switchblade tucked in your boot",
+        "Reliable old revolver"
+      ],
+      "equipment": [
+        "Climbing claws for scaling mega buildings",
+        "Black-market lockpicks",
+        "Jailbroken Augs"
+      ],
+      "credits": 3000,
+      "debt": "Your fence owes you 5,000 still.",
+      "skills_prepared": {
+        "Stealth": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "stealth",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Sabotage": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "sabotage",
+          "source": "background"
+        },
+        "Fast Talk": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "fast_talk",
+          "source": "background"
+        },
+        "Infiltration": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "infiltration",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Lena Cross",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 3000,
+        "background": "Cat Burglar",
+        "background_ability": "Just Someone in the Crowd — Once per day, as long as you are in or near a crowd, you can instantly lose any pursuit. Gain +2 to Stealth for the purposes of breaking and entering.",
+        "proficiency_allowed": 2,
+        "stealth_lvl": 2,
+        "stealth_prof": 1,
+        "sabotage_lvl": 1,
+        "sabotage_prof": 0,
+        "fast_talk_lvl": 1,
+        "fast_talk_prof": 0,
+        "infiltration_lvl": 2,
+        "infiltration_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Switchblade",
+            "original_text": "Switchblade tucked in your boot",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Switchblade",
+            "tier": "Background Gear",
+            "traits": "Blades, Concealable",
+            "credit_cost": 250,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Old Revolver",
+            "original_text": "Reliable old revolver",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Old Revolver",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Loud",
+            "credit_cost": 400,
+            "skill": "Small Arms",
+            "damage": "1D6",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Skintight Catsuit",
+            "original_text": "Skintight catsuit underneath perfectly ordinary clothes",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Skintight Catsuit",
+            "tier": "Background Gear",
+            "traits": "Light, Near-Silent",
+            "credit_cost": 550,
+            "damage_negation": 1,
+            "weight": "Light"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Black Market lockpicks",
+            "original_text": "Black-market lockpicks",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Black Market lockpicks",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Hacking Enabled, Sabotage +1",
+            "credit_cost": 3750,
+            "part_replaced": "Fingers",
+            "strain": 2
+          },
+          {
+            "display_name": "Jailbroken Augs",
+            "original_text": "Jailbroken Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Jailbroken Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 1150,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "Climbing Claws",
+            "original_text": "Climbing claws for scaling mega buildings",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Climbing Claws",
+            "tier": "Tech Items",
+            "traits": "Parkour",
+            "credit_cost": 1200,
+            "description": "Allows climbing on vertical surfaces using Parkour."
+          }
+        ],
+        "narrative_items": []
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 3,
+        "active_bonuses": [
+          {
+            "source": "Black Market lockpicks",
+            "target": "Sabotage",
+            "amount": 1,
+            "condition": "Always on unless GM rules otherwise"
+          }
+        ]
+      }
+    },
+    {
+      "id": "corporate_security",
+      "background": "Corporate Security",
+      "name": "Adrian Holt",
+      "handle": "",
+      "page": 19,
+      "concept": "Disgraced security professional with old protocols and new enemies.",
+      "summary": "You used to enforce the law. Now, you are above it.",
+      "skills": [
+        "Investigation",
+        "Big Guns",
+        "Corporate",
+        "Small Arms"
+      ],
+      "proficiencies": [
+        "Small Arms",
+        "Corporate"
+      ],
+      "upgrades": [
+        "Small Arms",
+        "Corporate"
+      ],
+      "ability_name": "Badge Intimidation",
+      "ability_text": "Once per day, flash your old credentials and force someone to hesitate or comply, even if you have not been a cop in years. Gain +2 when trying to Bully any Civilian-type NPCs.",
+      "home": "A safehouse in an old subway station; the last good cop still checks in on you.",
+      "clothes": [
+        "Patched-up riot armour",
+        "Old department boots"
+      ],
+      "weapons": [
+        "Aged police-issue shotgun",
+        "Broken stun baton that still works sometimes"
+      ],
+      "equipment": [
+        "Department radio that stopped responding",
+        "Handcuffs",
+        "Bulletproof flask",
+        "Corp-grade Augs"
+      ],
+      "credits": 5000,
+      "debt": "No explicit debt listed.",
+      "skills_prepared": {
+        "Investigation": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "investigation",
+          "source": "background"
+        },
+        "Big Guns": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "big_guns",
+          "source": "background"
+        },
+        "Corporate": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "corporate",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Small Arms": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "small_arms",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Adrian Holt",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 5000,
+        "background": "Corporate Security",
+        "background_ability": "Badge Intimidation — Once per day, flash your old credentials and force someone to hesitate or comply, even if you have not been a cop in years. Gain +2 when trying to Bully any Civilian-type NPCs.",
+        "proficiency_allowed": 2,
+        "investigation_lvl": 1,
+        "investigation_prof": 0,
+        "big_guns_lvl": 1,
+        "big_guns_prof": 0,
+        "corporate_lvl": 2,
+        "corporate_prof": 1,
+        "small_arms_lvl": 2,
+        "small_arms_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Aged Police-Issue Shotgun",
+            "original_text": "Aged police-issue shotgun",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Aged Police-Issue Shotgun",
+            "tier": "Background Gear",
+            "traits": "Big Guns, Knockback, Non-Lethal",
+            "credit_cost": 1500,
+            "skill": "Big Guns",
+            "damage": "2D8-3",
+            "range": "20 Feet"
+          },
+          {
+            "display_name": "Stun Baton",
+            "original_text": "Broken stun baton that still works sometimes",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Stun Baton",
+            "tier": "Background Gear",
+            "traits": "Melee, Stunning",
+            "credit_cost": 350,
+            "skill": "Melee Combat",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Patched-up Riot Armour",
+            "original_text": "Patched-up riot armour",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Patched-up Riot Armour",
+            "tier": "Background Gear",
+            "traits": "Heavy",
+            "credit_cost": 650,
+            "damage_negation": 3,
+            "weight": "Heavy"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Corp-grade Augs",
+            "original_text": "Corp-grade Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Corp-grade Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Thermal Vision, HUD Time/Map Overlay",
+            "credit_cost": 4250,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Old department boots",
+            "original_text": "Old department boots",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Department radio that stopped responding",
+            "original_text": "Department radio that stopped responding",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Handcuffs",
+            "original_text": "Handcuffs",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Bulletproof flask",
+            "original_text": "Bulletproof flask",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "cyber_junkie",
+      "background": "Cyber-Junkie",
+      "name": "Nika Voss",
+      "handle": "Glitch",
+      "page": 20,
+      "concept": "Mesh addict and cortex-scorched systems savant.",
+      "summary": "You live more in the mesh than the real world.",
+      "skills": [
+        "Hacking",
+        "Awareness",
+        "Engineering",
+        "Cybernetics Handling"
+      ],
+      "proficiencies": [
+        "Hacking",
+        "Awareness"
+      ],
+      "upgrades": [
+        "Hacking",
+        "Cybernetics Handling"
+      ],
+      "ability_name": "Overclocked Brain",
+      "ability_text": "Once per day, you can either push your neural processor to triple speed, allowing you to use Hacking twice in a single action, or reroll a failed Hacking attempt.",
+      "home": "A VR cafe jury-rigged into a living space; half the customers think you are a digital ghost.",
+      "clothes": [
+        "LED-coated jacket that cycles through old hacker slogans",
+        "Programming socks"
+      ],
+      "weapons": [
+        "Compact electro-knife",
+        "Smart pistol with a safety override"
+      ],
+      "equipment": [
+        "Custom cyberdeck",
+        "Illegal firmware mod",
+        "Bottle of anti-seizure meds"
+      ],
+      "credits": 500,
+      "debt": "3,000 in debt to a hacker collective; they expect results.",
+      "skills_prepared": {
+        "Hacking": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "hacking",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Awareness": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "awareness",
+          "source": "background"
+        },
+        "Engineering": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "engineering",
+          "source": "background"
+        },
+        "Cybernetics Handling": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "cybernetics_handling",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Nika Voss",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 500,
+        "background": "Cyber-Junkie",
+        "background_ability": "Overclocked Brain — Once per day, you can either push your neural processor to triple speed, allowing you to use Hacking twice in a single action, or reroll a failed Hacking attempt.",
+        "proficiency_allowed": 2,
+        "hacking_lvl": 2,
+        "hacking_prof": 1,
+        "awareness_lvl": 1,
+        "awareness_prof": 1,
+        "engineering_lvl": 1,
+        "engineering_prof": 0,
+        "cybernetics_handling_lvl": 2,
+        "cybernetics_handling_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Electro Knife",
+            "original_text": "Compact electro-knife",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Electro Knife",
+            "tier": "Background Gear",
+            "traits": "Blades, Shocking",
+            "credit_cost": 400,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Smart Pistol",
+            "original_text": "Smart pistol with a safety override",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Smart Pistol",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Smart-Tracking",
+            "credit_cost": 1150,
+            "skill": "Small Arms",
+            "damage": "1D4",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Custom Cyberdeck",
+            "original_text": "Custom cyberdeck",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Custom Cyberdeck",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Hacking Enabled",
+            "credit_cost": 1500,
+            "part_replaced": "N/A"
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "LED-coated jacket that cycles through old hacker slogans",
+            "original_text": "LED-coated jacket that cycles through old hacker slogans",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Programming socks",
+            "original_text": "Programming socks",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Illegal firmware mod",
+            "original_text": "Illegal firmware mod",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Bottle of anti-seizure meds",
+            "original_text": "Bottle of anti-seizure meds",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 0,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "desert_courier",
+      "background": "Desert Courier",
+      "name": "Salim Reyes",
+      "handle": "Dust",
+      "page": 21,
+      "concept": "Wasteland courier who treats speed as armour.",
+      "summary": "Speed is survival. You never stay in one place for long.",
+      "skills": [
+        "Piloting",
+        "Parkour",
+        "Stealth",
+        "Scavenging"
+      ],
+      "proficiencies": [
+        "Piloting",
+        "Stealth"
+      ],
+      "upgrades": [
+        "Piloting",
+        "Parkour"
+      ],
+      "ability_name": "Blink and You Miss Me",
+      "ability_text": "Once per day, move twice as far in one Movement action, ignoring terrain penalties.",
+      "home": "A converted cargo truck filled with old navigation maps and half-eaten protein bars.",
+      "clothes": [
+        "High-speed riding suit",
+        "Reinforced gloves"
+      ],
+      "weapons": [
+        "Compact submachine gun",
+        "Collapsible baton"
+      ],
+      "equipment": [
+        "Hacked GPS",
+        "Fake delivery credentials",
+        "Undelivered package",
+        "Aftermarket Augs"
+      ],
+      "credits": 8000,
+      "debt": "Someone wants their package back.",
+      "skills_prepared": {
+        "Piloting": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "piloting",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Parkour": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "parkour",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Stealth": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "stealth",
+          "source": "background"
+        },
+        "Scavenging": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "scavenging",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Salim Reyes",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 8000,
+        "background": "Desert Courier",
+        "background_ability": "Blink and You Miss Me — Once per day, move twice as far in one Movement action, ignoring terrain penalties.",
+        "proficiency_allowed": 2,
+        "piloting_lvl": 2,
+        "piloting_prof": 1,
+        "parkour_lvl": 2,
+        "parkour_prof": 0,
+        "stealth_lvl": 1,
+        "stealth_prof": 1,
+        "scavenging_lvl": 1,
+        "scavenging_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Compact SMG",
+            "original_text": "Compact submachine gun",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Compact SMG",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Inaccurate",
+            "credit_cost": 900,
+            "skill": "Small Arms",
+            "damage": "3D4",
+            "range": "30 Feet"
+          },
+          {
+            "display_name": "Collapsible Baton",
+            "original_text": "Collapsible baton",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Collapsible Baton",
+            "tier": "Background Gear",
+            "traits": "Melee, Concealable",
+            "credit_cost": 200,
+            "skill": "Melee Combat",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Riding Suit",
+            "original_text": "High-speed riding suit",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Riding Suit",
+            "tier": "Background Gear",
+            "traits": "Light",
+            "credit_cost": 350,
+            "damage_negation": 1,
+            "weight": "Light"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Aftermarket Augs",
+            "original_text": "Aftermarket Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Aftermarket Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 900,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Reinforced gloves",
+            "original_text": "Reinforced gloves",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Hacked GPS",
+            "original_text": "Hacked GPS",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Fake delivery credentials",
+            "original_text": "Fake delivery credentials",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Undelivered package",
+            "original_text": "Undelivered package",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "ex_military",
+      "background": "Ex-Military",
+      "name": "Dana Kaur",
+      "handle": "Sarge",
+      "page": 22,
+      "concept": "Veteran deserter with battlefield instincts and old ghosts.",
+      "summary": "You have seen war. You do not want to see it again.",
+      "skills": [
+        "Demolitions",
+        "Big Guns",
+        "First Aid",
+        "Sabotage"
+      ],
+      "proficiencies": [
+        "Big Guns",
+        "First Aid"
+      ],
+      "upgrades": [
+        "Big Guns",
+        "First Aid"
+      ],
+      "ability_name": "War Never Changes",
+      "ability_text": "You never freeze in combat. If you are ambushed, you still get a turn before anything hits you.",
+      "home": "A bunk in a shared mercenary dormitory, surrounded by other people running from something.",
+      "clothes": [
+        "Old combat fatigues",
+        "Dated armoured jacket stiff from dried blood"
+      ],
+      "weapons": [
+        "Heavily modified assault rifle",
+        "Knife with someone’s name scratched into the blade"
+      ],
+      "equipment": [
+        "Stolen military commlink",
+        "Expired rations",
+        "Crumpled photograph of old unit",
+        "Dated Mil-grade Augs",
+        "Armoured prosthetic limb"
+      ],
+      "credits": 10500,
+      "debt": "No debt, but someone high up wants you erased.",
+      "skills_prepared": {
+        "Demolitions": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "demolitions",
+          "source": "background"
+        },
+        "Big Guns": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "big_guns",
+          "source": "background_plus_starting_skill_point"
+        },
+        "First Aid": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "first_aid",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Sabotage": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "sabotage",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Dana Kaur",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 10500,
+        "background": "Ex-Military",
+        "background_ability": "War Never Changes — You never freeze in combat. If you are ambushed, you still get a turn before anything hits you.",
+        "proficiency_allowed": 2,
+        "demolitions_lvl": 1,
+        "demolitions_prof": 0,
+        "big_guns_lvl": 2,
+        "big_guns_prof": 1,
+        "first_aid_lvl": 2,
+        "first_aid_prof": 1,
+        "sabotage_lvl": 1,
+        "sabotage_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Heavily Modified Assault Rifle",
+            "original_text": "Heavily modified assault rifle",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Heavily Modified Assault Rifle",
+            "tier": "Background Gear",
+            "traits": "Big Guns",
+            "credit_cost": 2500,
+            "skill": "Big Guns",
+            "damage": "1D8+1",
+            "range": "40 Feet"
+          },
+          {
+            "display_name": "Combat Knife",
+            "original_text": "Knife with someone’s name scratched into the blade",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Combat Knife",
+            "tier": "Background Gear",
+            "traits": "Blades",
+            "credit_cost": 200,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Dated Armoured Jacket",
+            "original_text": "Dated armoured jacket stiff from dried blood",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Dated Armoured Jacket",
+            "tier": "Background Gear",
+            "traits": "Medium",
+            "credit_cost": 500,
+            "damage_negation": 2,
+            "weight": "Medium"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Dated Mil-grade Augs",
+            "original_text": "Dated Mil-grade Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Dated Mil-grade Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, HUD Time/Map Overlay",
+            "credit_cost": 4100,
+            "part_replaced": "Eyes",
+            "strain": 1
+          },
+          {
+            "display_name": "Armoured Prosthetic Limb",
+            "original_text": "Armoured prosthetic limb",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Armoured Prosthetic Limb",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Damage Negation +1",
+            "credit_cost": 4500,
+            "part_replaced": "Arm",
+            "strain": 3
+          }
+        ],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "Military Comm Link",
+            "original_text": "Stolen military commlink",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Military Comm Link",
+            "tier": "Tech Items",
+            "traits": "",
+            "credit_cost": 350,
+            "description": "An encrypted communications device for military use."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Old combat fatigues",
+            "original_text": "Old combat fatigues",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Expired rations",
+            "original_text": "Expired rations",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Crumpled photograph of old unit",
+            "original_text": "Crumpled photograph of old unit",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 4,
+        "active_bonuses": [
+          {
+            "source": "Armoured Prosthetic Limb",
+            "target": "Damage Negation",
+            "amount": 1,
+            "condition": "Always on unless GM rules otherwise"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gambler_on_the_run",
+      "background": "Gambler on the Run",
+      "name": "Milo Rask",
+      "handle": "Lucky",
+      "page": 23,
+      "concept": "Charming runaway whose luck has a body count.",
+      "summary": "You bet it all; now you gamble that you can outrun your problems.",
+      "skills": [
+        "Persuasion",
+        "Small Arms",
+        "Underworld",
+        "Fast Talk"
+      ],
+      "proficiencies": [
+        "Small Arms",
+        "Fast Talk"
+      ],
+      "upgrades": [
+        "Small Arms",
+        "Fast Talk"
+      ],
+      "ability_name": "Lady Luck",
+      "ability_text": "Once per day, if you roll a 20 on a D20, replace the result with a 2. Once per day, if you have sacrificed a 20 result, you may replace any other result with a Critical Success.",
+      "home": "A roach-infested motel room on the outskirts, paid in cash under a fake name.",
+      "clothes": [
+        "Long jacket with gang patches hastily removed",
+        "Cargo pants",
+        "Very snazzy hat"
+      ],
+      "weapons": [
+        "Sawed-off shotgun",
+        "Rusted trench knife"
+      ],
+      "equipment": [
+        "Hidden gang tattoo",
+        "Fake identity chip",
+        "Lucky coin stolen from the wrong person",
+        "Jailbroken Augs"
+      ],
+      "credits": 100,
+      "debt": "5,000 credits in blood money debt.",
+      "skills_prepared": {
+        "Persuasion": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "persuasion",
+          "source": "background"
+        },
+        "Small Arms": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "small_arms",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Underworld": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "underworld",
+          "source": "background"
+        },
+        "Fast Talk": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "fast_talk",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Milo Rask",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 100,
+        "background": "Gambler on the Run",
+        "background_ability": "Lady Luck — Once per day, if you roll a 20 on a D20, replace the result with a 2. Once per day, if you have sacrificed a 20 result, you may replace any other result with a Critical Success.",
+        "proficiency_allowed": 2,
+        "persuasion_lvl": 1,
+        "persuasion_prof": 0,
+        "small_arms_lvl": 2,
+        "small_arms_prof": 1,
+        "underworld_lvl": 1,
+        "underworld_prof": 0,
+        "fast_talk_lvl": 2,
+        "fast_talk_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Rusty Sawed Off Shotgun",
+            "original_text": "Sawed-off shotgun",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Rusty Sawed Off Shotgun",
+            "tier": "Background Gear",
+            "traits": "Big Guns, Knockback",
+            "credit_cost": 750,
+            "skill": "Big Guns",
+            "damage": "1D8-2",
+            "range": "20 Feet"
+          },
+          {
+            "display_name": "Rusted Trench Knife",
+            "original_text": "Rusted trench knife",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Rusted Trench Knife",
+            "tier": "Background Gear",
+            "traits": "Blades",
+            "credit_cost": 200,
+            "skill": "Blades",
+            "damage": "1D6",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Jailbroken Augs",
+            "original_text": "Jailbroken Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Jailbroken Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 1150,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "ID Chip Lanyard",
+            "original_text": "Fake identity chip",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "ID Chip Lanyard",
+            "tier": "Tech Items",
+            "traits": "",
+            "credit_cost": 25,
+            "description": "Personal identification chip reader on a neck strap; required for access to secure buildings."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Long jacket with gang patches hastily removed",
+            "original_text": "Long jacket with gang patches hastily removed",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Cargo pants",
+            "original_text": "Cargo pants",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Very snazzy hat",
+            "original_text": "Very snazzy hat",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Hidden gang tattoo",
+            "original_text": "Hidden gang tattoo",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Lucky coin stolen from the wrong person",
+            "original_text": "Lucky coin stolen from the wrong person",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "grease_monkey",
+      "background": "Grease Monkey",
+      "name": "Rosa Tan",
+      "handle": "Spanner",
+      "page": 24,
+      "concept": "Machine whisperer with a toolbox full of stolen miracles.",
+      "summary": "You build machines. You fix machines. Sometimes, you punch machines.",
+      "skills": [
+        "Jury-Rigging",
+        "Cybernetics Handling",
+        "Piloting",
+        "Scavenging"
+      ],
+      "proficiencies": [
+        "Jury-Rigging",
+        "Piloting"
+      ],
+      "upgrades": [
+        "Jury-Rigging",
+        "Scavenging"
+      ],
+      "ability_name": "Built Like a Tank",
+      "ability_text": "As long as you are repairing something that belongs to you or an ally, you gain +2 to Jury-Rigging and Engineering.",
+      "home": "A corner of an old auto-shop, protected by booby-trapped junk piles.",
+      "clothes": [
+        "Grease-stained coveralls",
+        "Heavy-duty work boots"
+      ],
+      "weapons": [
+        "Power wrench",
+        "Old revolver"
+      ],
+      "equipment": [
+        "Toolbox full of borrowed corporate tech",
+        "Love letter from someone you ghosted",
+        "Mech-con Augs"
+      ],
+      "credits": 800,
+      "debt": "2,500 in unpaid garage fees.",
+      "skills_prepared": {
+        "Jury-Rigging": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "jury_rigging",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Cybernetics Handling": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "cybernetics_handling",
+          "source": "background"
+        },
+        "Piloting": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "piloting",
+          "source": "background"
+        },
+        "Scavenging": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "scavenging",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Rosa Tan",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 800,
+        "background": "Grease Monkey",
+        "background_ability": "Built Like a Tank — As long as you are repairing something that belongs to you or an ally, you gain +2 to Jury-Rigging and Engineering.",
+        "proficiency_allowed": 2,
+        "jury_rigging_lvl": 2,
+        "jury_rigging_prof": 1,
+        "cybernetics_handling_lvl": 1,
+        "cybernetics_handling_prof": 0,
+        "piloting_lvl": 1,
+        "piloting_prof": 1,
+        "scavenging_lvl": 2,
+        "scavenging_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Power Wrench",
+            "original_text": "Power wrench",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Power Wrench",
+            "tier": "Background Gear",
+            "traits": "Melee",
+            "credit_cost": 250,
+            "skill": "Melee Combat",
+            "damage": "1D6",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Old Revolver",
+            "original_text": "Old revolver",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Old Revolver",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Loud",
+            "credit_cost": 400,
+            "skill": "Small Arms",
+            "damage": "1D6",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Mech-con Augs",
+            "original_text": "Mech-con Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Mech-con Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Hacking Enabled",
+            "credit_cost": 1750,
+            "part_replaced": "Brain-Eyes",
+            "strain": 2
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Grease-stained coveralls",
+            "original_text": "Grease-stained coveralls",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Heavy-duty work boots",
+            "original_text": "Heavy-duty work boots",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Toolbox full of borrowed corporate tech",
+            "original_text": "Toolbox full of borrowed corporate tech",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Love letter from someone you ghosted",
+            "original_text": "Love letter from someone you ghosted",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 2,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "gutter_rat_orphan",
+      "background": "Gutter Rat Orphan",
+      "name": "Jax Morrow",
+      "handle": "Scraps",
+      "page": 25,
+      "concept": "Undercity survivor who knows where the city forgets to look.",
+      "summary": "You were not raised—you survived.",
+      "skills": [
+        "Melee Combat",
+        "Evasion",
+        "Street Cred",
+        "Parkour"
+      ],
+      "proficiencies": [
+        "Melee Combat",
+        "Parkour"
+      ],
+      "upgrades": [
+        "Melee Combat",
+        "Parkour"
+      ],
+      "ability_name": "Rat Runs the Maze",
+      "ability_text": "Once per day, you can find a secret, unmonitored path through the city: alleyways, sewer tunnels, maintenance shafts. Even in total lockdown, you always have an escape.",
+      "home": "A squat in an abandoned parking garage, surrounded by old shopping carts and makeshift tarps.",
+      "clothes": [
+        "Mismatched urban wear",
+        "Ratty hoodie with corporate logos from five years ago"
+      ],
+      "weapons": [
+        "Rusted switchblade",
+        "Ancient semi-auto pistol"
+      ],
+      "equipment": [
+        "Lockpicks",
+        "Burner phone at 20% battery",
+        "Metro card with enough credits for one last ride",
+        "Aftermarket Augs"
+      ],
+      "credits": 500,
+      "debt": "Owe 5,000 to a gang fixer.",
+      "skills_prepared": {
+        "Melee Combat": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "melee_combat",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Evasion": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "evasion_skill",
+          "source": "background"
+        },
+        "Street Cred": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "street_cred",
+          "source": "background"
+        },
+        "Parkour": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "parkour",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Jax Morrow",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 500,
+        "background": "Gutter Rat Orphan",
+        "background_ability": "Rat Runs the Maze — Once per day, you can find a secret, unmonitored path through the city: alleyways, sewer tunnels, maintenance shafts. Even in total lockdown, you always have an escape.",
+        "proficiency_allowed": 2,
+        "melee_combat_lvl": 2,
+        "melee_combat_prof": 1,
+        "evasion_skill_lvl": 1,
+        "evasion_skill_prof": 0,
+        "street_cred_lvl": 1,
+        "street_cred_prof": 0,
+        "parkour_lvl": 2,
+        "parkour_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Rusty Switch Blade",
+            "original_text": "Rusted switchblade",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Rusty Switch Blade",
+            "tier": "Background Gear",
+            "traits": "Blades, Concealable",
+            "credit_cost": 150,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Ancient Semi-auto Pistol",
+            "original_text": "Ancient semi-auto pistol",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Ancient Semi-auto Pistol",
+            "tier": "Background Gear",
+            "traits": "Small Arms",
+            "credit_cost": 450,
+            "skill": "Small Arms",
+            "damage": "1D4",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Black Market lockpicks",
+            "original_text": "Lockpicks",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Black Market lockpicks",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Hacking Enabled, Sabotage +1",
+            "credit_cost": 3750,
+            "part_replaced": "Fingers",
+            "strain": 2
+          },
+          {
+            "display_name": "Aftermarket Augs",
+            "original_text": "Aftermarket Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Aftermarket Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 900,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Mismatched urban wear",
+            "original_text": "Mismatched urban wear",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Ratty hoodie with corporate logos from five years ago",
+            "original_text": "Ratty hoodie with corporate logos from five years ago",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Burner phone at 20% battery",
+            "original_text": "Burner phone at 20% battery",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Metro card with enough credits for one last ride",
+            "original_text": "Metro card with enough credits for one last ride",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 3,
+        "active_bonuses": [
+          {
+            "source": "Black Market lockpicks",
+            "target": "Sabotage",
+            "amount": 1,
+            "condition": "Always on unless GM rules otherwise"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mesh_hacker",
+      "background": "Mesh Hacker",
+      "name": "Ilya Novak",
+      "handle": "Ghostline",
+      "page": 26,
+      "concept": "Signal terrorist and AR illusionist with drone-feed instincts.",
+      "summary": "You do not just hack computers; you hack people’s senses.",
+      "skills": [
+        "Drone Warfare",
+        "Media",
+        "Big Guns",
+        "Hacking"
+      ],
+      "proficiencies": [
+        "Drone Warfare",
+        "Hacking"
+      ],
+      "upgrades": [
+        "Drone Warfare",
+        "Hacking"
+      ],
+      "ability_name": "See What I Want You to See",
+      "ability_text": "Once per day, you can use the GhostWalk hack without having to roll for success.",
+      "home": "An old movie theater rigged as a personal VR den, filled with AI-crafted dreams.",
+      "clothes": [
+        "Haptic-coated bodysuit"
+      ],
+      "weapons": [
+        "Electro-dart launcher",
+        "Homemade flashbang"
+      ],
+      "equipment": [
+        "Illegal AR projector",
+        "Jailbroken Augs",
+        "Custom Cyberdeck"
+      ],
+      "credits": 2000,
+      "debt": "Blacklisted from every mainstream mesh network.",
+      "skills_prepared": {
+        "Drone Warfare": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "drone_warfare",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Media": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "media",
+          "source": "background"
+        },
+        "Big Guns": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "big_guns",
+          "source": "background"
+        },
+        "Hacking": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "hacking",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Ilya Novak",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 2000,
+        "background": "Mesh Hacker",
+        "background_ability": "See What I Want You to See — Once per day, you can use the GhostWalk hack without having to roll for success.",
+        "proficiency_allowed": 2,
+        "drone_warfare_lvl": 2,
+        "drone_warfare_prof": 1,
+        "media_lvl": 1,
+        "media_prof": 0,
+        "big_guns_lvl": 1,
+        "big_guns_prof": 0,
+        "hacking_lvl": 2,
+        "hacking_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Electro-dart Launcher",
+            "original_text": "Electro-dart launcher",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Electro-dart Launcher",
+            "tier": "Background Gear",
+            "traits": "Big Guns, Injection Round",
+            "credit_cost": 650,
+            "skill": "Big Guns",
+            "damage": "1D6 EMP",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Jailbroken Augs",
+            "original_text": "Jailbroken Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Jailbroken Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 1150,
+            "part_replaced": "Eyes",
+            "strain": 1
+          },
+          {
+            "display_name": "Custom Cyberdeck",
+            "original_text": "Custom Cyberdeck",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Custom Cyberdeck",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Hacking Enabled",
+            "credit_cost": 1500,
+            "part_replaced": "N/A"
+          }
+        ],
+        "consumables": [
+          {
+            "display_name": "Homemade Flashbang",
+            "original_text": "Homemade flashbang",
+            "match_method": "manual",
+            "notes": "",
+            "category": "consumable",
+            "catalogue_item": "Homemade Flashbang",
+            "tier": "Throwables",
+            "traits": "Thrown: 30 Feet. Blind in 10 Feet radius. DC 10 Evasion Save. Demolitions",
+            "credit_cost": 750,
+            "description": "Cheap and definitely trustworthy!"
+          }
+        ],
+        "misc": [
+          {
+            "display_name": "Illegal AR Projector",
+            "original_text": "Illegal AR projector",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Illegal AR Projector",
+            "tier": "Tech Items",
+            "traits": "",
+            "credit_cost": 450,
+            "description": "Create a holographic duplicate of a person. Stationary."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Haptic-coated bodysuit",
+            "original_text": "Haptic-coated bodysuit",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "pilot",
+      "background": "Pilot",
+      "name": "Talia Cruz",
+      "handle": "Vector",
+      "page": 27,
+      "concept": "Corporate-trained pilot who cannot stop answering the signal.",
+      "summary": "Speed is king. Surviving it is queen.",
+      "skills": [
+        "Drone Warfare",
+        "Cybernetics Handling",
+        "Engineering",
+        "Piloting"
+      ],
+      "proficiencies": [
+        "Drone Warfare",
+        "Piloting"
+      ],
+      "upgrades": [
+        "Piloting",
+        "Engineering"
+      ],
+      "ability_name": "Get There Fast",
+      "ability_text": "Once per Day, you can double the Movement speed of a Vehicle or Mech for one Round.",
+      "home": "A tiny apartment in the Mega Building the corp you work for owns.",
+      "clothes": [
+        "Skintight haptic feedback suit"
+      ],
+      "weapons": [
+        "Compact holdout pistol"
+      ],
+      "equipment": [
+        "Full-connect hovercraft Augs",
+        "Piloting speedware",
+        "Cool aviator shades"
+      ],
+      "credits": 30000,
+      "debt": "Licence renewal due in a week; flat 15,000Cr fee.",
+      "skills_prepared": {
+        "Drone Warfare": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "drone_warfare",
+          "source": "background"
+        },
+        "Cybernetics Handling": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "cybernetics_handling",
+          "source": "background"
+        },
+        "Engineering": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "engineering",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Piloting": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "piloting",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Talia Cruz",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 30000,
+        "background": "Pilot",
+        "background_ability": "Get There Fast — Once per Day, you can double the Movement speed of a Vehicle or Mech for one Round.",
+        "proficiency_allowed": 2,
+        "drone_warfare_lvl": 1,
+        "drone_warfare_prof": 1,
+        "cybernetics_handling_lvl": 1,
+        "cybernetics_handling_prof": 0,
+        "engineering_lvl": 2,
+        "engineering_prof": 0,
+        "piloting_lvl": 2,
+        "piloting_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Compact Holdout Pistol",
+            "original_text": "Compact holdout pistol",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Compact Holdout Pistol",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Concealable",
+            "credit_cost": 650,
+            "skill": "Small Arms",
+            "damage": "1D4",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [
+          {
+            "display_name": "Haptic Bodysuit",
+            "original_text": "Skintight haptic feedback suit",
+            "match_method": "manual",
+            "notes": "",
+            "category": "armour",
+            "catalogue_item": "Haptic Bodysuit",
+            "tier": "Background Gear",
+            "traits": "Light",
+            "credit_cost": 600,
+            "damage_negation": 1,
+            "weight": "Light"
+          }
+        ],
+        "cyberware": [
+          {
+            "display_name": "Full-connect hovercraft Augs",
+            "original_text": "Full-connect hovercraft Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Full-connect hovercraft Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Piloting +1 (Hover vehicles only)",
+            "credit_cost": 3750,
+            "part_replaced": "Brain, Eyes",
+            "strain": 2
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Piloting speedware",
+            "original_text": "Piloting speedware",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Cool aviator shades",
+            "original_text": "Cool aviator shades",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 2,
+        "active_bonuses": [
+          {
+            "source": "Full-connect hovercraft Augs",
+            "target": "Piloting",
+            "amount": 1,
+            "condition": "Hover vehicles only"
+          }
+        ]
+      }
+    },
+    {
+      "id": "piss_poor_artist",
+      "background": "Piss-Poor Artist",
+      "name": "Emi Laurent",
+      "handle": "Smudge",
+      "page": 28,
+      "concept": "Broke street artist who sees the city as unfinished canvas.",
+      "summary": "Maybe one day people will recognize you? Probably not.",
+      "skills": [
+        "Fast Talk",
+        "Performance",
+        "Media",
+        "Jury-Rigging"
+      ],
+      "proficiencies": [
+        "Performance",
+        "Fast Talk"
+      ],
+      "upgrades": [
+        "Performance",
+        "Media"
+      ],
+      "ability_name": "The Muse Smiles",
+      "ability_text": "Once per Day, gain a sudden burst of inspiration, allowing you to gain Advantage (1D4 + your Performance) on a single Non-Combat roll.",
+      "home": "A run-down cubicle apartment in a rent-a-day centre; they forgot to charge you last week.",
+      "clothes": [
+        "Baggy jeans",
+        "Loose sweater covered in paint stains"
+      ],
+      "weapons": [
+        "Switchblade found on the streets"
+      ],
+      "equipment": [
+        "Jailbroken Augs",
+        "Nine pirated Abode products"
+      ],
+      "credits": 0,
+      "debt": "About 40,000 in Art School loans with 22% compounding interest.",
+      "skills_prepared": {
+        "Fast Talk": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "fast_talk",
+          "source": "background"
+        },
+        "Performance": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "performance",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Media": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "media",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Jury-Rigging": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "jury_rigging",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Emi Laurent",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 0,
+        "background": "Piss-Poor Artist",
+        "background_ability": "The Muse Smiles — Once per Day, gain a sudden burst of inspiration, allowing you to gain Advantage (1D4 + your Performance) on a single Non-Combat roll.",
+        "proficiency_allowed": 2,
+        "fast_talk_lvl": 1,
+        "fast_talk_prof": 1,
+        "performance_lvl": 2,
+        "performance_prof": 1,
+        "media_lvl": 2,
+        "media_prof": 0,
+        "jury_rigging_lvl": 1,
+        "jury_rigging_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Switchblade",
+            "original_text": "Switchblade found on the streets",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Switchblade",
+            "tier": "Background Gear",
+            "traits": "Blades, Concealable",
+            "credit_cost": 250,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Jailbroken Augs",
+            "original_text": "Jailbroken Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Jailbroken Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 1150,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Baggy jeans",
+            "original_text": "Baggy jeans",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Loose sweater covered in paint stains",
+            "original_text": "Loose sweater covered in paint stains",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Nine pirated Abode products",
+            "original_text": "Nine pirated Abode products",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "religious_fanatic",
+      "background": "Religious Fanatic",
+      "name": "Jonah Mirek",
+      "handle": "Witness",
+      "page": 29,
+      "concept": "True believer whose faith keeps moving when sense says stop.",
+      "summary": "You believe in something bigger than yourself.",
+      "skills": [
+        "Persuasion",
+        "Xenobiology",
+        "First Aid",
+        "Survival"
+      ],
+      "proficiencies": [
+        "Survival",
+        "Persuasion"
+      ],
+      "upgrades": [
+        "Survival",
+        "First Aid"
+      ],
+      "ability_name": "Faith Drives Me",
+      "ability_text": "Once per Combat, your faith keeps you going. Heal 1D4 HP as a Free Action.",
+      "home": "A hidden underground chapel full of chanting believers.",
+      "clothes": [
+        "Hand-sewn priestly robes",
+        "Corporate combat boots"
+      ],
+      "weapons": [
+        "Blessed dagger",
+        "Shock-stick"
+      ],
+      "equipment": [
+        "Holy relic: reprogrammed AI core",
+        "Flask of sacred oil, probably combat drugs"
+      ],
+      "credits": 500,
+      "debt": "Your cult expects absolute loyalty.",
+      "skills_prepared": {
+        "Persuasion": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "persuasion",
+          "source": "background"
+        },
+        "Xenobiology": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "xenobiology",
+          "source": "background"
+        },
+        "First Aid": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "first_aid",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Survival": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "survival",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Jonah Mirek",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 500,
+        "background": "Religious Fanatic",
+        "background_ability": "Faith Drives Me — Once per Combat, your faith keeps you going. Heal 1D4 HP as a Free Action.",
+        "proficiency_allowed": 2,
+        "persuasion_lvl": 1,
+        "persuasion_prof": 1,
+        "xenobiology_lvl": 1,
+        "xenobiology_prof": 0,
+        "first_aid_lvl": 2,
+        "first_aid_prof": 0,
+        "survival_lvl": 2,
+        "survival_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Dagger",
+            "original_text": "Blessed dagger",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Dagger",
+            "tier": "Background Gear",
+            "traits": "Blades, Concealable",
+            "credit_cost": 250,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Shock Stick",
+            "original_text": "Shock-stick",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Shock Stick",
+            "tier": "Background Gear",
+            "traits": "Melee, Shocking",
+            "credit_cost": 300,
+            "skill": "Melee Combat",
+            "damage": "1D4 EMP",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "Holy Relic",
+            "original_text": "Holy relic: reprogrammed AI core",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Holy Relic",
+            "tier": "Everyday Use Items",
+            "traits": "",
+            "credit_cost": 110,
+            "description": "It does nothing."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Hand-sewn priestly robes",
+            "original_text": "Hand-sewn priestly robes",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Corporate combat boots",
+            "original_text": "Corporate combat boots",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Flask of sacred oil, probably combat drugs",
+            "original_text": "Flask of sacred oil, probably combat drugs",
+            "match_method": "narrative_only",
+            "notes": "No direct stat block; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 0,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "rogue_surgeon",
+      "background": "Rogue Surgeon",
+      "name": "Dr. Mira Sayegh",
+      "handle": "Needle",
+      "page": 30,
+      "concept": "Black-clinic surgeon who can patch almost anything except trust.",
+      "summary": "You fix people. Sometimes. You try, at least.",
+      "skills": [
+        "First Aid",
+        "Cybernetics Handling",
+        "Persuasion",
+        "Investigation"
+      ],
+      "proficiencies": [
+        "First Aid",
+        "Cybernetics Handling"
+      ],
+      "upgrades": [
+        "First Aid",
+        "Cybernetics Handling"
+      ],
+      "ability_name": "Meat is Weak",
+      "ability_text": "Once per Combat as a Bonus Action, you can patch up yourself or an Ally. Roll a DC: 10 First Aid check; on a success, you or your ally heals for 1D6.",
+      "home": "An abandoned ambulance, still stocked with supplies. The siren still works.",
+      "clothes": [
+        "Bloodstained surgical scrubs",
+        "Reinforced apron"
+      ],
+      "weapons": [
+        "Bone saw",
+        "Syringe gun filled with mystery anesthetic"
+      ],
+      "equipment": [
+        "Mobile surgery kit",
+        "Box of untested cybernetic augments",
+        "Flask of medicinal whiskey"
+      ],
+      "credits": 20000,
+      "debt": "Wanted for illegal body mods.",
+      "skills_prepared": {
+        "First Aid": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "first_aid",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Cybernetics Handling": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "cybernetics_handling",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Persuasion": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "persuasion",
+          "source": "background"
+        },
+        "Investigation": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "investigation",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Dr. Mira Sayegh",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 20000,
+        "background": "Rogue Surgeon",
+        "background_ability": "Meat is Weak — Once per Combat as a Bonus Action, you can patch up yourself or an Ally. Roll a DC: 10 First Aid check; on a success, you or your ally heals for 1D6.",
+        "proficiency_allowed": 2,
+        "first_aid_lvl": 2,
+        "first_aid_prof": 1,
+        "cybernetics_handling_lvl": 2,
+        "cybernetics_handling_prof": 1,
+        "persuasion_lvl": 1,
+        "persuasion_prof": 0,
+        "investigation_lvl": 1,
+        "investigation_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Bone Saw",
+            "original_text": "Bone saw",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Bone Saw",
+            "tier": "Background Gear",
+            "traits": "Blades, Jagged (Bleed on Crit)",
+            "credit_cost": 300,
+            "skill": "Blades",
+            "damage": "1D6",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Syringe Gun",
+            "original_text": "Syringe gun filled with mystery anesthetic",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Syringe Gun",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Injection Round",
+            "credit_cost": 650,
+            "skill": "Small Arms",
+            "damage": "1D4",
+            "range": "30 Feet"
+          }
+        ],
+        "armour": [],
+        "cyberware": [],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "EMT-grade Medkit",
+            "original_text": "Mobile surgery kit",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "EMT-grade Medkit",
+            "tier": "First-Aid Items",
+            "traits": "First Aid, First Aid Bonus: 1D4",
+            "credit_cost": 10250,
+            "description": "A medical kit for professional EMTs."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Bloodstained surgical scrubs",
+            "original_text": "Bloodstained surgical scrubs",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Reinforced apron",
+            "original_text": "Reinforced apron",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Box of untested cybernetic augments",
+            "original_text": "Box of untested cybernetic augments",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Flask of medicinal whiskey",
+            "original_text": "Flask of medicinal whiskey",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 0,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "samurai_otaku",
+      "background": "Samurai Otaku",
+      "name": "Kenji Park",
+      "handle": "",
+      "page": 31,
+      "concept": "Obsessive Samurai fan with merch, footwork, and no field time.",
+      "summary": "Your Oshi is the best! You are going to be just like them.",
+      "skills": [
+        "Performance",
+        "Media",
+        "Fast Talk",
+        "Street Cred"
+      ],
+      "proficiencies": [
+        "Street Cred",
+        "Performance"
+      ],
+      "upgrades": [
+        "Street Cred",
+        "Performance"
+      ],
+      "ability_name": "Say hello to my little (fake) friend!",
+      "ability_text": "You have a collection of high-end, hyper-realistic recreations of popular Samurai gear. All of it is non-functional. Once per day, you can produce a fake version of a Tier-three piece of equipment.",
+      "home": "The basement at your mother’s place.",
+      "clothes": [
+        "Jacket with your favourite Samurai on the back",
+        "Ratty band shirt"
+      ],
+      "weapons": [
+        "Officially branded katana"
+      ],
+      "equipment": [
+        "Body pillow of your favourite Samurai",
+        "Music sticks",
+        "Corp-grade Augs"
+      ],
+      "credits": 10000,
+      "debt": "A lot of collectibles.",
+      "skills_prepared": {
+        "Performance": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "performance",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Media": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "media",
+          "source": "background"
+        },
+        "Fast Talk": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "fast_talk",
+          "source": "background"
+        },
+        "Street Cred": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "street_cred",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Kenji Park",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 10000,
+        "background": "Samurai Otaku",
+        "background_ability": "Say hello to my little (fake) friend! — You have a collection of high-end, hyper-realistic recreations of popular Samurai gear. All of it is non-functional. Once per day, you can produce a fake version of a Tier-three piece of equipment.",
+        "proficiency_allowed": 2,
+        "performance_lvl": 2,
+        "performance_prof": 1,
+        "media_lvl": 1,
+        "media_prof": 0,
+        "fast_talk_lvl": 1,
+        "fast_talk_prof": 0,
+        "street_cred_lvl": 2,
+        "street_cred_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Officially Branded Katana",
+            "original_text": "Officially branded katana",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Officially Branded Katana",
+            "tier": "Background Gear",
+            "traits": "Blades",
+            "credit_cost": 350,
+            "skill": "Blades",
+            "damage": "2D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Corp-grade Augs",
+            "original_text": "Corp-grade Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Corp-grade Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Thermal Vision, HUD Time/Map Overlay",
+            "credit_cost": 4250,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [
+          {
+            "display_name": "Selfie Stick",
+            "original_text": "Body pillow of your favourite Samurai",
+            "match_method": "manual",
+            "notes": "",
+            "category": "misc",
+            "catalogue_item": "Selfie Stick",
+            "tier": "Tech Items",
+            "traits": "",
+            "credit_cost": 30,
+            "description": "Arm-length extender for taking vids/pics."
+          }
+        ],
+        "narrative_items": [
+          {
+            "display_name": "Jacket with your favourite Samurai on the back",
+            "original_text": "Jacket with your favourite Samurai on the back",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Ratty band shirt",
+            "original_text": "Ratty band shirt",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Music sticks",
+            "original_text": "Music sticks",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "scavenger",
+      "background": "Scavenger",
+      "name": "Petra Vance",
+      "handle": "Rummage",
+      "page": 32,
+      "concept": "Ruins-picker who survives by finding value in wreckage.",
+      "summary": "Someone has to look for gold.",
+      "skills": [
+        "Evasion",
+        "Melee Combat",
+        "Stealth",
+        "Scavenging"
+      ],
+      "proficiencies": [
+        "Melee Combat",
+        "Scavenging"
+      ],
+      "upgrades": [
+        "Scavenging",
+        "Stealth"
+      ],
+      "ability_name": "Oh, What’s This?",
+      "ability_text": "Once per day you can happen upon a useful little gizmo, weapon, or piece of equipment worth below 300Cr from the Civilian Gear tables.",
+      "home": "A van filled to the brim with junk you have not found anyone to buy.",
+      "clothes": [
+        "One high-end designer sneaker",
+        "One sandal",
+        "Dirty old cargo pants",
+        "Homemade cloak"
+      ],
+      "weapons": [
+        "Old revolver",
+        "Bent baseball bat"
+      ],
+      "equipment": [
+        "Out-of-tune Geiger counter",
+        "Old Aftermarket Augs",
+        "Duffle bag"
+      ],
+      "credits": 1275,
+      "debt": "All fairly found laying around.",
+      "skills_prepared": {
+        "Evasion": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "evasion_skill",
+          "source": "background"
+        },
+        "Melee Combat": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "melee_combat",
+          "source": "background"
+        },
+        "Stealth": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "stealth",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Scavenging": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "scavenging",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Petra Vance",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 1275,
+        "background": "Scavenger",
+        "background_ability": "Oh, What’s This? — Once per day you can happen upon a useful little gizmo, weapon, or piece of equipment worth below 300Cr from the Civilian Gear tables.",
+        "proficiency_allowed": 2,
+        "evasion_skill_lvl": 1,
+        "evasion_skill_prof": 0,
+        "melee_combat_lvl": 1,
+        "melee_combat_prof": 1,
+        "stealth_lvl": 2,
+        "stealth_prof": 0,
+        "scavenging_lvl": 2,
+        "scavenging_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Old Revolver",
+            "original_text": "Old revolver",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Old Revolver",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Loud",
+            "credit_cost": 400,
+            "skill": "Small Arms",
+            "damage": "1D6",
+            "range": "30 Feet"
+          },
+          {
+            "display_name": "Bent Baseball Bat",
+            "original_text": "Bent baseball bat",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Bent Baseball Bat",
+            "tier": "Background Gear",
+            "traits": "Melee",
+            "credit_cost": 200,
+            "skill": "Melee Combat",
+            "damage": "1D6",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Aftermarket Augs",
+            "original_text": "Old Aftermarket Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Aftermarket Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 900,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "One high-end designer sneaker",
+            "original_text": "One high-end designer sneaker",
+            "match_method": "narrative_only",
+            "notes": "No direct stat block; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "One sandal",
+            "original_text": "One sandal",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Dirty old cargo pants",
+            "original_text": "Dirty old cargo pants",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Homemade cloak",
+            "original_text": "Homemade cloak",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Out-of-tune Geiger counter",
+            "original_text": "Out-of-tune Geiger counter",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Duffle bag",
+            "original_text": "Duffle bag",
+            "match_method": "narrative_only",
+            "notes": "No direct stat block; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "student_dropout",
+      "background": "Student Dropout",
+      "name": "Noor Bellamy",
+      "handle": "Late Fee",
+      "page": 33,
+      "concept": "Corporate academy escapee with debts, passkeys, and questions.",
+      "summary": "They said you had a bright future. Then you found out what the company was really doing.",
+      "skills": [
+        "Engineering",
+        "Xenobiology",
+        "Corporate",
+        "Persuasion"
+      ],
+      "proficiencies": [
+        "Engineering",
+        "Corporate"
+      ],
+      "upgrades": [
+        "Engineering",
+        "Corporate"
+      ],
+      "ability_name": "I Studied For This!",
+      "ability_text": "Once per day, recall something you have studied, gaining +2 to any non-combat skill for a single roll.",
+      "home": "A clean corporate apartment still listed under an old identity; repo team is coming.",
+      "clothes": [
+        "Tailored corporate slacks",
+        "Cyber-optimal shades",
+        "School polo you forgot to return"
+      ],
+      "weapons": [
+        "Compact holdout pistol",
+        "Retractable stun baton"
+      ],
+      "equipment": [
+        "Personal encrypted datapad",
+        "Corporate passkey for older doors",
+        "Half-full bottle of overpriced synth-scotch",
+        "School-grade Brain-Interface Aug"
+      ],
+      "credits": 2000,
+      "debt": "100,000 in corporate debt; they want it back.",
+      "skills_prepared": {
+        "Engineering": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "engineering",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Xenobiology": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "xenobiology",
+          "source": "background"
+        },
+        "Corporate": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "corporate",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Persuasion": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "persuasion",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Noor Bellamy",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 2000,
+        "background": "Student Dropout",
+        "background_ability": "I Studied For This! — Once per day, recall something you have studied, gaining +2 to any non-combat skill for a single roll.",
+        "proficiency_allowed": 2,
+        "engineering_lvl": 2,
+        "engineering_prof": 1,
+        "xenobiology_lvl": 1,
+        "xenobiology_prof": 0,
+        "corporate_lvl": 2,
+        "corporate_prof": 1,
+        "persuasion_lvl": 1,
+        "persuasion_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Compact Holdout Pistol",
+            "original_text": "Compact holdout pistol",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Compact Holdout Pistol",
+            "tier": "Background Gear",
+            "traits": "Small Arms, Concealable",
+            "credit_cost": 650,
+            "skill": "Small Arms",
+            "damage": "1D4",
+            "range": "30 Feet"
+          },
+          {
+            "display_name": "Retractable Stun Baton",
+            "original_text": "Retractable stun baton",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Retractable Stun Baton",
+            "tier": "Background Gear",
+            "traits": "Melee, Stunning",
+            "credit_cost": 300,
+            "skill": "Melee Combat",
+            "damage": "1D4 EMP",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "School-grade Brain-Interface Aug",
+            "original_text": "School-grade Brain-Interface Aug",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "School-grade Brain-Interface Aug",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware",
+            "credit_cost": 12000,
+            "part_replaced": "Eyes",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Tailored corporate slacks",
+            "original_text": "Tailored corporate slacks",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Cyber-optimal shades",
+            "original_text": "Cyber-optimal shades",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "School polo you forgot to return",
+            "original_text": "School polo you forgot to return",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Personal encrypted datapad",
+            "original_text": "Personal encrypted datapad",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Corporate passkey for older doors",
+            "original_text": "Corporate passkey for older doors",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Half-full bottle of overpriced synth-scotch",
+            "original_text": "Half-full bottle of overpriced synth-scotch",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 1,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "test_subject",
+      "background": "Test Subject",
+      "name": "Elise Ward",
+      "handle": "Batch 7",
+      "page": 34,
+      "concept": "Escaped experiment held together by faulty cyberware and stubbornness.",
+      "summary": "Your body is not yours: it was an experiment.",
+      "skills": [
+        "Jury-Rigging",
+        "First Aid",
+        "Cybernetics Handling",
+        "Survival"
+      ],
+      "proficiencies": [
+        "Survival",
+        "Cybernetics Handling"
+      ],
+      "upgrades": [
+        "Survival",
+        "First Aid"
+      ],
+      "ability_name": "Glitch Mode",
+      "ability_text": "Once per Combat, as a Free Action, activate Latent Experimental Cyberware. Roll a D4 for a one-turn effect: super speed, pain resistance, enhanced reflexes, or better vision. Afterward, lose 1D4 HP.",
+      "home": "An underground shelter full of other lost souls, each one stranger than the last.",
+      "clothes": [
+        "Sterile hospital scrubs",
+        "Scavenged jacket"
+      ],
+      "weapons": [
+        "Serrated scalpel"
+      ],
+      "equipment": [
+        "Corporate barcode tattoo",
+        "Vial of mystery serum",
+        "Disposable mask"
+      ],
+      "credits": 50,
+      "debt": "No explicit debt listed.",
+      "skills_prepared": {
+        "Jury-Rigging": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "jury_rigging",
+          "source": "background"
+        },
+        "First Aid": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "first_aid",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Cybernetics Handling": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "cybernetics_handling",
+          "source": "background"
+        },
+        "Survival": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "survival",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Elise Ward",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 50,
+        "background": "Test Subject",
+        "background_ability": "Glitch Mode — Once per Combat, as a Free Action, activate Latent Experimental Cyberware. Roll a D4 for a one-turn effect: super speed, pain resistance, enhanced reflexes, or better vision. Afterward, lose 1D4 HP.",
+        "proficiency_allowed": 2,
+        "jury_rigging_lvl": 1,
+        "jury_rigging_prof": 0,
+        "first_aid_lvl": 2,
+        "first_aid_prof": 0,
+        "cybernetics_handling_lvl": 1,
+        "cybernetics_handling_prof": 1,
+        "survival_lvl": 2,
+        "survival_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Serrated Scalpel",
+            "original_text": "Serrated scalpel",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Serrated Scalpel",
+            "tier": "Background Gear",
+            "traits": "Blades, Jagged (Bleed on Crit)",
+            "credit_cost": 250,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [],
+        "consumables": [
+          {
+            "display_name": "DustMask+",
+            "original_text": "Disposable mask",
+            "match_method": "manual",
+            "notes": "",
+            "category": "consumable",
+            "catalogue_item": "DustMask+",
+            "tier": "Defence Items",
+            "traits": "",
+            "credit_cost": 60,
+            "description": "Basic filter against smog and allergens."
+          }
+        ],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Sterile hospital scrubs",
+            "original_text": "Sterile hospital scrubs",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Scavenged jacket",
+            "original_text": "Scavenged jacket",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Corporate barcode tattoo",
+            "original_text": "Corporate barcode tattoo",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Vial of mystery serum",
+            "original_text": "Vial of mystery serum",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 0,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "underground_fighter",
+      "background": "Underground Fighter",
+      "name": "Tomasz Iversen",
+      "handle": "Brick",
+      "page": 35,
+      "concept": "Pit-fighter who knows the sound a room makes before violence.",
+      "summary": "You survived the fight pits.",
+      "skills": [
+        "Melee Combat",
+        "Blades",
+        "Bullying",
+        "Street Cred"
+      ],
+      "proficiencies": [
+        "Melee Combat",
+        "Street Cred"
+      ],
+      "upgrades": [
+        "Melee Combat",
+        "Blades"
+      ],
+      "ability_name": "Knockout Blow",
+      "ability_text": "Once per day, as a Free Action, you can attempt to Stun an enemy after making a successful Melee hit. The enemy rolls against DC 10 Save to avoid being Stunned for one turn.",
+      "home": "A broken locker in the basement of a fight club, barely enough space to stretch out.",
+      "clothes": [
+        "Bloodstained tank top",
+        "Fingerless gloves"
+      ],
+      "weapons": [
+        "Titanium-plated knuckledusters",
+        "Combat knife"
+      ],
+      "equipment": [
+        "Betting slips from old fights",
+        "Augmented scanner",
+        "Adrenaline Stim"
+      ],
+      "credits": 10000,
+      "debt": "On the hit list of an underground fight promoter.",
+      "skills_prepared": {
+        "Melee Combat": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "melee_combat",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Blades": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "blades",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Bullying": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "bullying",
+          "source": "background"
+        },
+        "Street Cred": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "street_cred",
+          "source": "background"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Tomasz Iversen",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 10000,
+        "background": "Underground Fighter",
+        "background_ability": "Knockout Blow — Once per day, as a Free Action, you can attempt to Stun an enemy after making a successful Melee hit. The enemy rolls against DC 10 Save to avoid being Stunned for one turn.",
+        "proficiency_allowed": 2,
+        "melee_combat_lvl": 2,
+        "melee_combat_prof": 1,
+        "blades_lvl": 2,
+        "blades_prof": 0,
+        "bullying_lvl": 1,
+        "bullying_prof": 0,
+        "street_cred_lvl": 1,
+        "street_cred_prof": 1
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Titanium Plated Knuckledusters",
+            "original_text": "Titanium-plated knuckledusters",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Titanium Plated Knuckledusters",
+            "tier": "Background Gear",
+            "traits": "Melee, Concealable",
+            "credit_cost": 250,
+            "skill": "Melee Combat",
+            "damage": "1D4",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Combat Knife",
+            "original_text": "Combat knife",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Combat Knife",
+            "tier": "Background Gear",
+            "traits": "Blades",
+            "credit_cost": 200,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Augmented Scanner",
+            "original_text": "Augmented scanner",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Augmented Scanner",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Sensor",
+            "credit_cost": 1750,
+            "part_replaced": "Eyes",
+            "strain": 1
+          },
+          {
+            "display_name": "Adrenaline Stim",
+            "original_text": "Adrenaline Stim",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Adrenaline Stim",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, once per Combat, gain 10 Feet of Movement as a Free Action",
+            "credit_cost": 2000,
+            "part_replaced": "Torso",
+            "strain": 1
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Bloodstained tank top",
+            "original_text": "Bloodstained tank top",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Fingerless gloves",
+            "original_text": "Fingerless gloves",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Betting slips from old fights",
+            "original_text": "Betting slips from old fights",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 2,
+        "active_bonuses": []
+      }
+    },
+    {
+      "id": "washed_up_rocker",
+      "background": "Washed Up Rocker",
+      "name": "Cass Vega",
+      "handle": "Static Cass",
+      "page": 36,
+      "concept": "Former riot-maker with one song left and too many grudges.",
+      "summary": "You had a hit song once; now your royalty checks have dried up.",
+      "skills": [
+        "Performance",
+        "Media",
+        "Fast Talk",
+        "Persuasion"
+      ],
+      "proficiencies": [
+        "Performance",
+        "Fast Talk"
+      ],
+      "upgrades": [
+        "Performance",
+        "Persuasion"
+      ],
+      "ability_name": "One Last Encore",
+      "ability_text": "Once per day, as a Bonus Action, draw all attention, including enemy aggression, to yourself for one Round. All opponents in a combat scene within 30 Feet must roll a DC: 10 plus your Performance Save. On failure, they must include you in their next Attack Action.",
+      "home": "A storage unit packed with old merch, a single mattress on the floor.",
+      "clothes": [
+        "Aged leather jacket covered in tour patches",
+        "Ripped jeans"
+      ],
+      "weapons": [
+        "Microphone stand reinforced for fights",
+        "Switchblade"
+      ],
+      "equipment": [
+        "Broken holo-projector of your greatest performance",
+        "Signed poster of a rival you hate",
+        "Guitar case with a secret compartment",
+        "Musician Augs",
+        "Aural Cyberware"
+      ],
+      "credits": 300,
+      "debt": "Owe a music label a whole album.",
+      "skills_prepared": {
+        "Performance": {
+          "level": 2,
+          "proficient": true,
+          "roll20_slug": "performance",
+          "source": "background_plus_starting_skill_point"
+        },
+        "Media": {
+          "level": 1,
+          "proficient": false,
+          "roll20_slug": "media",
+          "source": "background"
+        },
+        "Fast Talk": {
+          "level": 1,
+          "proficient": true,
+          "roll20_slug": "fast_talk",
+          "source": "background"
+        },
+        "Persuasion": {
+          "level": 2,
+          "proficient": false,
+          "roll20_slug": "persuasion",
+          "source": "background_plus_starting_skill_point"
+        }
+      },
+      "customization_note": "Ready to play. Rename freely before play. This character is not yet Samurai unless the GM starts after the upgrade event. You may swap proficiencies among Background skills and may move the two starting Skill Points before play.",
+      "roll20_attributes": {
+        "character_name": "Cass Vega",
+        "player_name": "",
+        "samurai_handle": "",
+        "level": 1,
+        "money": 300,
+        "background": "Washed Up Rocker",
+        "background_ability": "One Last Encore — Once per day, as a Bonus Action, draw all attention, including enemy aggression, to yourself for one Round. All opponents in a combat scene within 30 Feet must roll a DC: 10 plus your Performance Save. On failure, they must include you in their next Attack Action.",
+        "proficiency_allowed": 2,
+        "performance_lvl": 2,
+        "performance_prof": 1,
+        "media_lvl": 1,
+        "media_prof": 0,
+        "fast_talk_lvl": 1,
+        "fast_talk_prof": 1,
+        "persuasion_lvl": 2,
+        "persuasion_prof": 0
+      },
+      "gear_mapped_v0_2": {
+        "weapons": [
+          {
+            "display_name": "Microphone Stand",
+            "original_text": "Microphone stand reinforced for fights",
+            "match_method": "manual",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Microphone Stand",
+            "tier": "Background Gear",
+            "traits": "Melee",
+            "credit_cost": 100,
+            "skill": "Melee Combat",
+            "damage": "1D6",
+            "range": "Melee"
+          },
+          {
+            "display_name": "Switchblade",
+            "original_text": "Switchblade",
+            "match_method": "exact",
+            "notes": "",
+            "category": "weapon",
+            "catalogue_item": "Switchblade",
+            "tier": "Background Gear",
+            "traits": "Blades, Concealable",
+            "credit_cost": 250,
+            "skill": "Blades",
+            "damage": "1D4",
+            "range": "Melee"
+          }
+        ],
+        "armour": [],
+        "cyberware": [
+          {
+            "display_name": "Musician Augs",
+            "original_text": "Musician Augs",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Musician Augs",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Performance +1",
+            "credit_cost": 2750,
+            "part_replaced": "Eyes, Brain",
+            "strain": 2
+          },
+          {
+            "display_name": "Aural Cyberware",
+            "original_text": "Aural Cyberware",
+            "match_method": "manual",
+            "notes": "",
+            "category": "cyberware",
+            "catalogue_item": "Aural Cyberware",
+            "tier": "Background Cyberware",
+            "traits": "Cyberware, Sensor, Sonic-Resistant",
+            "credit_cost": 1750,
+            "part_replaced": "Ears",
+            "strain": 2
+          }
+        ],
+        "consumables": [],
+        "misc": [],
+        "narrative_items": [
+          {
+            "display_name": "Aged leather jacket covered in tour patches",
+            "original_text": "Aged leather jacket covered in tour patches",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Ripped jeans",
+            "original_text": "Ripped jeans",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Broken holo-projector of your greatest performance",
+            "original_text": "Broken holo-projector of your greatest performance",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Signed poster of a rival you hate",
+            "original_text": "Signed poster of a rival you hate",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          },
+          {
+            "display_name": "Guitar case with a secret compartment",
+            "original_text": "Guitar case with a secret compartment",
+            "match_method": "unmatched",
+            "notes": "No good Civilian Gear equivalent found; keep as descriptive inventory.",
+            "category": "narrative_item",
+            "catalogue_item": null
+          }
+        ]
+      },
+      "gear_derived_v0_2": {
+        "total_cyberware_strain": 4,
+        "active_bonuses": [
+          {
+            "source": "Musician Augs",
+            "target": "Performance",
+            "amount": 1,
+            "condition": "Always on unless GM rules otherwise"
+          }
+        ]
+      }
+    }
+  ]
+}
