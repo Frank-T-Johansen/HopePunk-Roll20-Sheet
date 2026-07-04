@@ -1,0 +1,2 @@
+node --check hopepunk_roll20_pregen_importer_v0_6.js: OK
+node --check hopepunk_roll20_movement_patch_v0_6.js: OK

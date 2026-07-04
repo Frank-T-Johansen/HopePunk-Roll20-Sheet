@@ -1,0 +1,11 @@
+Importer syntax check: exit 0
+STDOUT:
+
+STDERR:
+
+
+Patch syntax check: exit 0
+STDOUT:
+
+STDERR:
+

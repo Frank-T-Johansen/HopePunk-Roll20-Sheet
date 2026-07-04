@@ -1,0 +1,26 @@
+# Hope//Punk movement patch v0.6
+
+Movement policy: base Move 20; armour with HEAVY sets Move to 15; armour with LIGHT sets Move to 25; if both are present, HEAVY wins to avoid accidentally offsetting heavy armour with an accessory.
+
+| Background | Character | Move | Armour basis | Reason |
+|---|---|---:|---|---|
+| Bounty Hunter | Marcus Vale | 25 | Long Reinforced Duster [Medium]; Ballistic Vest [Light, Accessory] | Light armour trait present (+5 from base 20) |
+| Cat Burglar | Lena Cross | 25 | Skintight Catsuit [Light, Near-Silent] | Light armour trait present (+5 from base 20) |
+| Corporate Security | Adrian Holt | 15 | Patched-up Riot Armour [Heavy] | Heavy armour trait present (-5 from base 20) |
+| Cyber-Junkie | Nika Voss | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Desert Courier | Salim Reyes | 25 | Riding Suit [Light] | Light armour trait present (+5 from base 20) |
+| Ex-Military | Dana Kaur | 20 | Dated Armoured Jacket [Medium] | No Light/Heavy armour movement trait; base 20 |
+| Gambler on the Run | Milo Rask | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Grease Monkey | Rosa Tan | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Gutter Rat Orphan | Jax Morrow | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Mesh Hacker | Ilya Novak | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Pilot | Talia Cruz | 25 | Haptic Bodysuit [Light] | Light armour trait present (+5 from base 20) |
+| Piss-Poor Artist | Emi Laurent | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Religious Fanatic | Jonah Mirek | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Rogue Surgeon | Dr. Mira Sayegh | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Samurai Otaku | Kenji Park | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Scavenger | Petra Vance | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Student Dropout | Noor Bellamy | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Test Subject | Elise Ward | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Underground Fighter | Tomasz Iversen | 20 | (none) | No Light/Heavy armour movement trait; base 20 |
+| Washed Up Rocker | Cass Vega | 20 | (none) | No Light/Heavy armour movement trait; base 20 |

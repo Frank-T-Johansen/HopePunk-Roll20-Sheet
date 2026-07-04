@@ -1,0 +1,7 @@
+!hopepunk-pregens --help
+!hopepunk-pregens --dry-run
+!hopepunk-pregens --import
+!hopepunk-pregens --overwrite
+!hopepunk-pregens --characters
+!hopepunk-pregens --handouts
+!hopepunk-pregens-movement-patch
