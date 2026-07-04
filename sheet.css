@@ -467,3 +467,42 @@
   width: auto;
   min-width: 0;
 }
+
+
+/* V23 collapsible sheet sections */
+.charsheet .collapsible-box {
+  padding-top: 0;
+}
+
+.charsheet .sheet-collapse > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 8px 0;
+  border-bottom: 2px solid #222;
+  color: #333;
+}
+
+.charsheet .sheet-collapse > summary::-webkit-details-marker {
+  display: none;
+}
+
+.charsheet .sheet-collapse > summary::before {
+  content: "▾";
+  display: inline-block;
+  width: 1.2em;
+  font-size: 0.8em;
+}
+
+.charsheet .sheet-collapse:not([open]) > summary::before {
+  content: "▸";
+}
+
+.charsheet .sheet-collapse:not([open]) > summary {
+  border-bottom: none;
+}
+
+.charsheet .modifications-field textarea {
+  min-height: 54px;
+}

@@ -383,3 +383,21 @@ New in V22:
 - Cyberware has a new free-text Part field.
   - No automatic location-overlap Strain calculation is implemented because locations can be complex.
   - Players should manually increase cyberware Strain where overlap rules apply.
+
+## V23
+
+New in V23:
+- Added collapsible sections for:
+  - Background
+  - Skills
+  - Active Gear Bonuses
+  - Drones / Vehicles
+  - Weapons
+  - Armour
+- The top character header remains non-collapsible.
+- The bottom Other section remains non-collapsible.
+- Added Modifications text fields to:
+  - Weapons
+  - Armour
+  - Cyberware
+- Modifications are free-text fields intended to describe which bought modifications are installed, which slots they use, SP cost notes, and what the modification does.

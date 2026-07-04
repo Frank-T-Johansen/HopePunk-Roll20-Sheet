@@ -45,14 +45,17 @@
     </div>
   </header>
 
-  <section class="box">
-    <h2>Background</h2>
+  <section class="box collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Background</summary>
     <label>Background <input type="text" name="attr_background"></label>
     <label>Background Ability <textarea name="attr_background_ability"></textarea></label>
     <label>Feats & Feat Abilities <textarea name="attr_feats"></textarea></label>
-  </section>
-<section class="box">
-    <h2>Skills</h2>
+  </details>
+</section>
+<section class="box collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Skills</summary>
     <p class="hint">Proficiency is a checkbox. Skill Exp is spent only on that specific skill: every 10 Exp counts as 1 improvement point toward that skill. Advantage adds the selected Adv/Dis die; Disadvantage subtracts the selected Adv/Dis die. Skill checks use 1d20.</p>
     <div class="skill-row skill-header">
       <div>Skill</div><div>Exp.</div><div>Lvl</div><div>Gear</div><div>Prof.</div><div>Total</div><div>Roll</div><div>Adv.</div><div>Dis.</div><div>Mark</div><div>Advance</div>
@@ -585,10 +588,12 @@
   <button type="action" name="act_mark_xenobiology">+Fail</button>
   <input class="advance-status" type="text" name="attr_xenobiology_status" value="" readonly title="Shows when this skill has enough XP to improve">
 </div>
-  </section>
+  </details>
+</section>
 
-  <section class="box">
-    <h2>Active Gear Bonuses</h2>
+  <section class="box collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Active Gear Bonuses</summary>
     <p class="hint">Use these rows for any weapon, armour, cyberware, feat, consumable, or mod that grants a numerical flat bonus. Enable the row, choose a target, and enter the amount. For players, armour Defence fields are summed into Damage Negation.</p>
     <div class="bonus-row bonus-header"><div>On</div><div>Source</div><div>Target</div><div>Amount</div></div>
     <div class="bonus-row">
@@ -1119,15 +1124,17 @@
   </select>
   <input type="number" name="attr_bonus_12_amount" value="0">
 </div>
-  </section>
+  </details>
+</section>
 
   <section class="box">
     <h2>Consumables</h2>
     <textarea name="attr_consumables"></textarea>
   </section>
 
-  <section class="box gear-section">
-    <h2>Drones / Vehicles</h2>
+  <section class="box gear-section collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Drones / Vehicles</summary>
     <div class="gear-grid two"><div class="gear-card drone-card">
 <h4>Drone / Vehicle 1</h4>
 <label>Name <input type="text" name="attr_drone_1_name"></label>
@@ -1656,10 +1663,12 @@
     <label>C <input type="number" name="attr_drone_2_mod_c" value="0"></label>
   </div>
 </div></div>
-  </section>
+  </details>
+</section>
 
-  <section class="box gear-section">
-    <h2>Weapons</h2>
+  <section class="box gear-section collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Weapons</summary>
     <div class="gear-grid two"><div class="gear-card weapon-card">
   <div class="gear-card-title">
   <h4>Weapon 1</h4>
@@ -1942,6 +1951,7 @@
     <label>A <input type="number" name="attr_weapon_1_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_weapon_1_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_weapon_1_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div>
 <div class="gear-card weapon-card">
   <div class="gear-card-title">
@@ -2225,11 +2235,14 @@
     <label>A <input type="number" name="attr_weapon_2_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_weapon_2_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_weapon_2_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div></div>
-  </section>
+  </details>
+</section>
 
-  <section class="box gear-section">
-    <h2>Armour</h2>
+  <section class="box gear-section collapsible-box">
+    <details class="sheet-collapse" open="open">
+  <summary>Armour</summary>
     <div class="gear-grid three"><div class="gear-card armour-card">
 <div class="gear-card-title">
   <h4>Armour 1</h4>
@@ -2491,6 +2504,7 @@
     <label>A <input type="number" name="attr_armour_1_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_armour_1_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_armour_1_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div>
 <div class="gear-card armour-card">
 <div class="gear-card-title">
@@ -2753,6 +2767,7 @@
     <label>A <input type="number" name="attr_armour_2_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_armour_2_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_armour_2_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div>
 <div class="gear-card armour-card">
 <div class="gear-card-title">
@@ -3015,8 +3030,10 @@
     <label>A <input type="number" name="attr_armour_3_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_armour_3_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_armour_3_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div></div>
-  </section>
+  </details>
+</section>
 
   <section class="box gear-section">
     <h2>Cyberware</h2>
@@ -3278,6 +3295,7 @@
     <label>A <input type="number" name="attr_cyberware_1_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_cyberware_1_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_cyberware_1_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div>
 <div class="gear-card cyberware-card">
 <h4>Cyberware 2</h4>
@@ -3537,6 +3555,7 @@
     <label>A <input type="number" name="attr_cyberware_2_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_cyberware_2_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_cyberware_2_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div>
 <div class="gear-card cyberware-card">
 <h4>Cyberware 3</h4>
@@ -3796,6 +3815,7 @@
     <label>A <input type="number" name="attr_cyberware_3_mod_a" value="0"></label>
     <label>C <input type="number" name="attr_cyberware_3_mod_c" value="0"></label>
   </div>
+<label class="modifications-field">Modifications <textarea name="attr_cyberware_3_modifications" placeholder="Describe installed mods, slot use, SP cost, and effects."></textarea></label>
 </div></div>
   </section>
 
