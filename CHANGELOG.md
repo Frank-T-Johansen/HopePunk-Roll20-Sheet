@@ -401,3 +401,8 @@ New in V23:
   - Armour
   - Cyberware
 - Modifications are free-text fields intended to describe which bought modifications are installed, which slots they use, SP cost notes, and what the modification does.
+
+## V24
+
+New in V24:
+- Cyberware is now collapsible too.
